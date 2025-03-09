@@ -24,7 +24,13 @@ function jogar(linha, coluna, espaco) {
     tabuleiro[linha][coluna] = jogadorAtual;
     espaco.textContent = jogadorAtual;
 
-    if (verificarVioria()) {
+    if (verificarEmpate()) {
+        setTimeout(() => {
+            alert("Empate");
+            limparTabuleiro();
+        })
+    }
+    else if (verificarVioria()) {
         setTimeout(() => {
             alert(jogadorAtual + " venceu!");
             limparTabuleiro();
@@ -34,6 +40,10 @@ function jogar(linha, coluna, espaco) {
         jogadorAtual = jogadorAtual === "X" ? "O" : "X";
     }
 
+}
+
+function verificarEmpate() {
+    return tabuleiro.every(linha => linha.every(coluna => coluna !== "")) && !verificarVioria();
 }
 
 function verificarVioria() {
