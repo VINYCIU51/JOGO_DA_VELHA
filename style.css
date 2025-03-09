@@ -43,17 +43,24 @@ body {
     width: 300px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-gap: 8px;
     background-color: black;
 }
 
 .espaco {
-    display: grid;
-    grid-template-columns: 3fr, 1fr;
+    padding: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: aliceblue;
     height: 100%;
     width: 100%;
-
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .espaco:hover {
