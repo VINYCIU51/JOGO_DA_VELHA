@@ -6,63 +6,120 @@
 
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: radial-gradient(rgb(156, 156, 156), rgb(66, 66, 66));
+    align-content: center;
+    flex-wrap: nowrap;
+    padding: 50px;
+    row-gap: 200px;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: antiquewhite;
 }
 
-.score {
+.score-marker {
+    height: 100px;
+    width: 600px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    padding: 5px;
-    gap: 10px;
-    height: 70px;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: aqua
+}
+
+#player1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
     width: 300px;
-    background-color: aliceblue;
-    margin-bottom: 40px;
-    border-radius: 10px;
+    height: 100px;
+    gap: 5px 3px;
+    padding: 5px;
+    background-color: aquamarine;
 }
 
-.score-player1 {
-    height: 50px;
-    width: 50%;
-    background-color: rgb(95, 144, 187);
-    border-radius: 5px;
+#player1 .avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: gray;
 }
 
-.score-player2 {
-    height: 50px;
-    width: 50%;
-    background-color: rgb(142, 197, 245);
-    border-radius: 5px;
+#player1 .life {
+    height: 10px;
+    width: 100px;
+    background-color: red;
+
 }
+
+#player2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    width: 300px;
+    height: 100px;
+    gap: 5px 3px;
+    padding: 5px;
+    background-color: aquamarine;
+}
+
+#player2 .avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+#player2 .life {
+    height: 10px;
+    width: 100px;
+    background-color: red;
+
+}
+
+
+
 
 .tabuleiro {
-    height: 300px;
-    width: 300px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 8px;
-    background-color: black;
+    height: 400px;
+    width: 400px;
 }
 
 .espaco {
-    padding: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aliceblue;
-    height: 100%;
-    width: 100%;
+    background-color: transparent;
     font-size: 5rem;
     font-weight: bold;
     text-align: center;
     box-sizing: border-box;
     overflow: hidden;
+    border: 6px solid black;
 }
 
-.espaco:hover {
-    opacity: 0.9;
+.espaco:nth-child(1),
+.espaco:nth-child(2),
+.espaco:nth-child(3) {
+    border-top: none;
+}
+
+.espaco:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.espaco:nth-child(3n) {
+    border-right: none;
+}
+
+.espaco:nth-child(7),
+.espaco:nth-child(8),
+.espaco:nth-child(9) {
+    border-bottom: none;
 }
