@@ -1,4 +1,3 @@
-
 export let pontuacaoPlayer1 = 0;
 export let pontuacaoPlayer2 = 0;
 
