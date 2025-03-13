@@ -10,7 +10,7 @@ body {
     align-items: center;
     align-content: center;
     flex-wrap: nowrap;
-    padding: 50px;
+    padding: 100px;
     row-gap: 200px;
     font-family: "Dosis", sans-serif;
     font-size: 1.3rem;
@@ -19,76 +19,112 @@ body {
 }
 
 .score-marker {
-    height: 100px;
-    width: 600px;
+    height: 200px;
+    width: 800px;
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
     justify-content: space-between;
     padding: 10px;
-    background-color: aqua
+    background-color: aqua;
 }
 
 #player1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    width: 300px;
+    grid-template-areas:
+        "avatar nome pontos"
+        "avatar vida pontos";
+    grid-template-columns: 100px 150px 1fr;
+    grid-template-rows: 50px 50px;
+    gap: 3px;
+    width: 50dvw;
     height: 100px;
-    gap: 5px 3px;
-    padding: 5px;
-    background-color: aquamarine;
+    background-color: rgb(46, 61, 56);
 }
 
 #player1 .avatar {
+    grid-area: avatar;
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: gray;
+    background-color: aliceblue;
+}
+
+#player1 .name {
+    grid-area: nome;
+    align-content: center;
+    padding: 5px;
+    background-color: antiquewhite;
 }
 
 #player1 .life {
-    height: 10px;
-    width: 100px;
-    background-color: red;
-
-}
-
-#player2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    width: 300px;
-    height: 100px;
-    gap: 5px 3px;
-    padding: 5px;
+    grid-area: vida;
     background-color: aquamarine;
 }
 
+#player1 .points {
+    grid-area: pontos;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 5px;
+    background-color: beige;
+}
+
+
+
+#player2 {
+    display: grid;
+    grid-template-areas:
+        "pontos nome avatar"
+        "pontos vida avatar";
+    grid-template-columns: 1fr 150px 100px;
+    grid-template-rows: 50px 50px;
+    gap: 3px;
+    width: 50dvw;
+    height: 100px;
+    background-color: rgb(46, 61, 56);
+}
+
 #player2 .avatar {
+    grid-area: avatar;
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: gray;
+    background-color: aliceblue;
+}
+
+#player2 .name {
+    grid-area: nome;
+    align-content: center;
+    text-align: end;
+    padding: 5px;
+    background-color: antiquewhite;
 }
 
 #player2 .life {
-    height: 10px;
-    width: 100px;
-    background-color: red;
-
+    grid-area: vida;
+    background-color: aquamarine;
 }
 
-
-
+#player2 .points {
+    grid-area: pontos;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+    background-color: beige;
+}
 
 .tabuleiro {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: 400px;
-    width: 400px;
+    height: 600px;
+    width: 600px;
+    padding: 20px;
+    background-color: aqua;
 }
 
 .espaco {

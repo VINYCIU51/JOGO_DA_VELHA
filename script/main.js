@@ -1,4 +1,3 @@
-
 import { tabuleiro, limparTabuleiro, verificarEmpate, verificarVitoria } from './tabuleiro.js';
 import { atualizarPontuacao, pontuacaoPlayer1, pontuacaoPlayer2 } from './pontuacao.js';
 import { referencias, adicionarListeners } from './ui.js';
@@ -36,4 +35,6 @@ function iniciarJogo() {
     adicionarListeners(espacos, jogar);
 }
 
+
 iniciarJogo();
+
