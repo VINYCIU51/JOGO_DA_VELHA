@@ -5,6 +5,12 @@ export const tabuleiro = [
 ];
 
 export function limparTabuleiro(espacos) {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            tabuleiro[i][j] = "";
+        }
+    }
+
     espacos.forEach(espaco => {
         espaco.textContent = "";
     });

@@ -17,18 +17,23 @@ function jogar(linha, coluna, espaco) {
     if (verificarEmpate()) {
         setTimeout(() => {
             alert("Empate");
-            limparTabuleiro(espacos);
+            reiniciarJogo(espacos);
         });
     }
     else if (verificarVitoria()) {
         atualizarPontuacao(jogadorAtual, score1, score2);
         setTimeout(() => {
             alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu");
-            limparTabuleiro(espacos);
+            reiniciarJogo(espacos);
         }, 10);
     } else {
         jogadorAtual = jogadorAtual === "X" ? "O" : "X";
     }
+}
+
+function reiniciarJogo(espacos) {
+    limparTabuleiro(espacos);
+    iniciarJogo();
 }
 
 function iniciarJogo() {
@@ -37,4 +42,5 @@ function iniciarJogo() {
 
 
 iniciarJogo();
+
 
