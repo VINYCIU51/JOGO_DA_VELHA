@@ -1,5 +1,5 @@
 import { tabuleiro, limparTabuleiro, verificarEmpate, verificarVitoria } from './tabuleiro.js';
-import { atualizarPontuacao, pontuacaoPlayer1, pontuacaoPlayer2 } from './pontuacao.js';
+import { atualizarLife, atualizarPontuacao } from './pontuacao.js';
 import { referencias, adicionarListeners } from './ui.js';
 
 const { score1, score2, espacos } = referencias();
@@ -25,6 +25,7 @@ function jogar(linha, coluna, espaco) {
         setTimeout(() => {
             alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu");
             reiniciarJogo(espacos);
+            atualizarLife(jogadorAtual, 100);
         }, 10);
     } else {
         jogadorAtual = jogadorAtual === "X" ? "O" : "X";

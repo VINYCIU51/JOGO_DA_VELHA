@@ -15,19 +15,23 @@ body {
     font-family: "Dosis", sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
-    background-color: antiquewhite;
+    background-image: url(templates/fr.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .score-marker {
     height: 200px;
-    width: 800px;
+    width: 1000px;
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
-    justify-content: space-between;
     padding: 10px;
-    background-color: aqua;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
 }
 
 #player1 {
@@ -35,12 +39,11 @@ body {
     grid-template-areas:
         "avatar nome pontos"
         "avatar vida pontos";
-    grid-template-columns: 100px 150px 1fr;
+    grid-template-columns: 100px 2fr 1fr;
     grid-template-rows: 50px 50px;
     gap: 3px;
     width: 50dvw;
     height: 100px;
-    background-color: rgb(46, 61, 56);
 }
 
 #player1 .avatar {
@@ -48,19 +51,29 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: aliceblue;
+    background-image: url(templates/8821689.jpg);
+    background-size: cover;
 }
 
 #player1 .name {
     grid-area: nome;
     align-content: center;
     padding: 5px;
-    background-color: antiquewhite;
 }
 
 #player1 .life {
-    grid-area: vida;
-    background-color: aquamarine;
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#player1 .life-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
 }
 
 #player1 .points {
@@ -69,22 +82,18 @@ body {
     align-items: center;
     justify-content: end;
     padding: 5px;
-    background-color: beige;
 }
-
-
 
 #player2 {
     display: grid;
     grid-template-areas:
         "pontos nome avatar"
         "pontos vida avatar";
-    grid-template-columns: 1fr 150px 100px;
+    grid-template-columns: 1fr 2fr 100px;
     grid-template-rows: 50px 50px;
     gap: 3px;
     width: 50dvw;
     height: 100px;
-    background-color: rgb(46, 61, 56);
 }
 
 #player2 .avatar {
@@ -92,7 +101,8 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-color: aliceblue;
+    background-image: url(templates/8821665.jpg);
+    background-size: cover;
 }
 
 #player2 .name {
@@ -100,12 +110,21 @@ body {
     align-content: center;
     text-align: end;
     padding: 5px;
-    background-color: antiquewhite;
 }
 
 #player2 .life {
-    grid-area: vida;
-    background-color: aquamarine;
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#player2 .life-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
 }
 
 #player2 .points {
@@ -114,7 +133,6 @@ body {
     align-items: center;
     justify-content: start;
     padding: 5px;
-    background-color: beige;
 }
 
 .tabuleiro {
@@ -124,7 +142,9 @@ body {
     height: 600px;
     width: 600px;
     padding: 20px;
-    background-color: aqua;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
 }
 
 .espaco {
