@@ -15,7 +15,7 @@ body {
     font-family: "Dosis", sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
-    background-image: url(templates/fr.avif);
+    background-image: url(templates/seiko.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -51,7 +51,7 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-image: url(templates/8821689.jpg);
+    background-image: url(templates/veia-branca.jpg);
     background-size: cover;
 }
 
@@ -101,7 +101,7 @@ body {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    background-image: url(templates/8821665.jpg);
+    background-image: url(templates/veia-morena.jpg);
     background-size: cover;
 }
 

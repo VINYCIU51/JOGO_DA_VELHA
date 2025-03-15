@@ -1,0 +1,12 @@
+.score-marker {
+    height: 200px;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+}

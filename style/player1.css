@@ -1,0 +1,49 @@
+#player1 {
+    display: grid;
+    grid-template-areas:
+        "avatar nome pontos"
+        "avatar vida pontos";
+    grid-template-columns: 100px 2fr 1fr;
+    grid-template-rows: 50px 50px;
+    gap: 3px;
+    width: 50dvw;
+    height: 100px;
+}
+
+#player1 .avatar {
+    grid-area: avatar;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url(templates/veia-branca.jpg);
+    background-size: cover;
+}
+
+#player1 .name {
+    grid-area: nome;
+    align-content: center;
+    padding: 5px;
+}
+
+#player1 .life {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#player1 .life-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+}
+
+#player1 .points {
+    grid-area: pontos;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 5px;
+}

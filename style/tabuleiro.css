@@ -1,0 +1,44 @@
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 600px;
+    width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+}
+
+.espaco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 6px solid black;
+}
+
+.espaco:nth-child(1),
+.espaco:nth-child(2),
+.espaco:nth-child(3) {
+    border-top: none;
+}
+
+.espaco:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.espaco:nth-child(3n) {
+    border-right: none;
+}
+
+.espaco:nth-child(7),
+.espaco:nth-child(8),
+.espaco:nth-child(9) {
+    border-bottom: none;
+}

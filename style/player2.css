@@ -1,0 +1,50 @@
+#player2 {
+    display: grid;
+    grid-template-areas:
+        "pontos nome avatar"
+        "pontos vida avatar";
+    grid-template-columns: 1fr 2fr 100px;
+    grid-template-rows: 50px 50px;
+    gap: 3px;
+    width: 50dvw;
+    height: 100px;
+}
+
+#player2 .avatar {
+    grid-area: avatar;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url(templates/veia-morena.jpg);
+    background-size: cover;
+}
+
+#player2 .name {
+    grid-area: nome;
+    align-content: center;
+    text-align: end;
+    padding: 5px;
+}
+
+#player2 .life {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#player2 .life-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+}
+
+#player2 .points {
+    grid-area: pontos;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px;
+}
