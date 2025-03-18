@@ -12,7 +12,17 @@ function jogar(linha, coluna, espaco) {
     }
 
     tabuleiro[linha][coluna] = jogadorAtual;
-    espaco.textContent = jogadorAtual;
+
+    const conteudo = document.createElement('div');
+    conteudo.textContent = jogadorAtual;
+    conteudo.classList.add('marcado');
+
+    espaco.textContent = '';
+    espaco.appendChild(conteudo);
+
+    conteudo.addEventListener('animationend', () => {
+        conteudo.classList.remove('marcado');
+    }, { once: true });
 
     if (verificarEmpate()) {
         setTimeout(() => {

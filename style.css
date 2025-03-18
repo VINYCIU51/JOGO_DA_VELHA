@@ -118,6 +118,7 @@ body {
     background-color: #ccc;
     border-radius: 10px;
     overflow: hidden;
+    transform: scaleX(-1);
 }
 
 #player2 .life-bar {
@@ -158,6 +159,20 @@ body {
     box-sizing: border-box;
     overflow: hidden;
     border: 6px solid black;
+}
+
+@keyframes animacao-escala {
+    0% {
+        transform: scale(2.0);
+    }
+
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.marcado {
+    animation: animacao-escala 0.3s ease-out;
 }
 
 .espaco:nth-child(1),
