@@ -26,3 +26,17 @@ export function atualizarLife(jogadorAtual, vidaMaxima) {
         barraVida.style.width = `${porcentagemVida}%`;
     }
 }
+
+export function vitoriaPorLife(jogadorAtual) {
+    if (jogadorAtual === "X") {
+        if (vidaP2 <= 0) {
+            return true;
+        }
+    } else {
+        if (vidaP1 <= 0) {
+            return true;
+        }
+    }
+
+    return false;
+}

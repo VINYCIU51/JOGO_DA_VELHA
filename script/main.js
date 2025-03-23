@@ -1,5 +1,5 @@
 import { tabuleiro, limparTabuleiro, verificarEmpate, verificarVitoria } from './tabuleiro.js';
-import { atualizarLife, atualizarPontuacao } from './pontuacao.js';
+import { atualizarLife, atualizarPontuacao, vitoriaPorLife } from './pontuacao.js';
 import { referencias, adicionarListeners } from './ui.js';
 
 const { score1, score2, espacos } = referencias();
@@ -7,6 +7,14 @@ const { score1, score2, espacos } = referencias();
 let jogadorAtual = "X";
 
 function jogar(linha, coluna, espaco) {
+
+    if (vitoriaPorLife(jogadorAtual)) {
+        setTimeout(() => {
+            alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o jogo");
+        }, 10);
+        return;
+    }
+
     if (tabuleiro[linha][coluna] !== "") {
         return;
     }
@@ -28,16 +36,17 @@ function jogar(linha, coluna, espaco) {
         setTimeout(() => {
             alert("Empate");
             reiniciarJogo(espacos);
-        });
+        }, 10);
     }
     else if (verificarVitoria()) {
         atualizarPontuacao(jogadorAtual, score1, score2);
         setTimeout(() => {
-            alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu");
+            alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o round");
             reiniciarJogo(espacos);
             atualizarLife(jogadorAtual, 100);
         }, 10);
-    } else {
+    }
+    else {
         jogadorAtual = jogadorAtual === "X" ? "O" : "X";
     }
 }

@@ -16,3 +16,4 @@ export function adicionarListeners(espacos, jogar) {
         });
     });
 }
+
