@@ -62,5 +62,3 @@ function iniciarJogo() {
 
 
 iniciarJogo();
-
-

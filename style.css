@@ -149,6 +149,7 @@ body {
 }
 
 .espaco {
+    pointer-events: auto;
     display: flex;
     align-items: center;
     justify-content: center;

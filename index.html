@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jogo da Velha com Vida</title>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
 
 <body>
     <div class="score-marker">
@@ -17,14 +16,14 @@
             <div class="name">Player 1</div>
             <div class="points">0</div>
             <div class="life">
-                <div class="life-bar"></div>
+                <div class="life-bar" style="width: 100%"></div>
             </div>
         </div>
 
         <div id="player2">
             <div class="name">Player 2</div>
             <div class="life">
-                <div class="life-bar"></div>
+                <div class="life-bar" style="width: 100%"></div>
             </div>
             <div class="points">0</div>
             <div class="avatar"></div>
@@ -40,7 +39,6 @@
         <div class="espaco"></div>
         <div class="espaco"></div>
         <div class="espaco"></div>
-
     </div>
     <script type="module" src="script/main.js"></script>
 </body>
