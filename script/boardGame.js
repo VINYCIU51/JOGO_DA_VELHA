@@ -17,10 +17,10 @@ export function validSpace(line, column) {
     return board[line][column] === "";
 }
 
-export function markSpace(line, column, currentPlayer, espaco) { // Adicione `espaco` como parâmetro
-    board[line][column] = currentPlayer; // Atualiza o tabuleiro lógico
+export function markSpace(line, column, currentPlayer, espaco) {
+    board[line][column] = currentPlayer;
 
-    // Manipulação do DOM (agora dentro de markSpace)
+    // animacao de marcacao
     espaco.innerHTML = `<div class="marcado">${currentPlayer}</div>`;
     espaco.firstElementChild.addEventListener('animationend', (e) => {
         e.target.classList.remove('marcado');

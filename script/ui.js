@@ -7,7 +7,7 @@ export function referencias() {
     return { score1, score2, espacos };
 }
 
-export function adicionarListeners(espacos, jogar) {
+export function addListeners(espacos, jogar) {
     espacos.forEach((espaco, indice) => {
         espaco.addEventListener("click", () => {
             const linha = Math.floor(indice / 3);

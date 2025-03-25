@@ -1,13 +1,12 @@
 import { markSpace, validSpace } from './boardGame.js';
 import { updateLife, updateScore } from './lifePoints.js';
-import { referencias } from './ui.js';
 import { lifeWin, draw, lineWin } from './endGame.js';
 import { initGame } from './game.js';
 
-const { score1, score2, espacos } = referencias();
 let jogadorAtual = "X";
 
 export function jogar(linha, coluna, espaco) {
+
     if (lifeWin()) {
         setTimeout(() => {
             alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o jogo");
@@ -28,7 +27,7 @@ export function jogar(linha, coluna, espaco) {
         }, 10);
     }
     else if (lineWin()) {
-        updateScore(jogadorAtual, score1, score2);
+        updateScore(jogadorAtual);
         setTimeout(() => {
             alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o round");
             gameControls.restart();

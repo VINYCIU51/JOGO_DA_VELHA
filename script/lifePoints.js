@@ -1,22 +1,27 @@
-export let pontuacaoPlayer1 = 0;
-export let pontuacaoPlayer2 = 0;
+import { referencias } from './ui.js';
+
 export let vidaP1 = 100;
 export let vidaP2 = 100;
 
-export function updateScore(jogadorAtual, score1, score2) {
-    if (jogadorAtual === "X") {
-        score1.textContent = pontuacaoPlayer1 += 10;
-    } else {
-        score2.textContent = pontuacaoPlayer2 += 10;
-    }
+const { score1, score2 } = referencias();
+
+export function updateScore(currentPlayer) {
+    const scoreElement = currentPlayer === "X" ? score1 : score2;
+    const currentScore = parseInt(scoreElement.textContent) || 0;
+    scoreElement.textContent = currentScore + 10;
 }
 
-export function updateLife(jogadorAtual, vidaMaxima) {
-    if (jogadorAtual === "X") {
+export function updateLife(currentPlayer, vidaMaxima) {
+    if (currentPlayer === "X") {
         vidaP2 -= 50;
         document.querySelector(`#player2 .life-bar`).style.width = `${(vidaP2 / vidaMaxima) * 100}%`;
     } else {
         vidaP1 -= 50;
         document.querySelector(`#player1 .life-bar`).style.width = `${(vidaP1 / vidaMaxima) * 100}%`;
     }
+}
+
+export function resetScore() {
+    score1.textContent = "0";
+    score2.textContent = "0";
 }

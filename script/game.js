@@ -1,11 +1,11 @@
 import { clearBoard } from './boardGame.js';
-import { referencias, adicionarListeners } from './ui.js';
+import { referencias, addListeners } from './ui.js';
 
 const { espacos } = referencias();
 
 export function initGame(jogar) {
     function start() {
-        adicionarListeners(espacos, jogar);
+        addListeners(espacos, jogar);
     }
 
     function restart() {
