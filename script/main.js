@@ -1,49 +1,38 @@
-import { tabuleiro, limparTabuleiro, verificarEmpate, verificarVitoria } from './tabuleiro.js';
-import { atualizarLife, atualizarPontuacao, vitoriaPorLife } from './pontuacao.js';
-import { referencias, adicionarListeners } from './ui.js';
+import { markSpace, validSpace } from './boardGame.js';
+import { updateLife, updateScore } from './lifePoints.js';
+import { referencias } from './ui.js';
+import { lifeWin, draw, lineWin } from './endGame.js';
+import { initGame } from './game.js';
 
 const { score1, score2, espacos } = referencias();
-
 let jogadorAtual = "X";
 
-function jogar(linha, coluna, espaco) {
-
-    if (vitoriaPorLife(jogadorAtual)) {
+export function jogar(linha, coluna, espaco) {
+    if (lifeWin()) {
         setTimeout(() => {
             alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o jogo");
         }, 10);
         return;
     }
 
-    if (tabuleiro[linha][coluna] !== "") {
+    if (!validSpace(linha, coluna)) {
         return;
     }
 
-    tabuleiro[linha][coluna] = jogadorAtual;
+    markSpace(linha, coluna, jogadorAtual, espaco);
 
-    const conteudo = document.createElement('div');
-    conteudo.textContent = jogadorAtual;
-    conteudo.classList.add('marcado');
-
-    espaco.textContent = '';
-    espaco.appendChild(conteudo);
-
-    conteudo.addEventListener('animationend', () => {
-        conteudo.classList.remove('marcado');
-    }, { once: true });
-
-    if (verificarEmpate()) {
+    if (draw()) {
         setTimeout(() => {
             alert("Empate");
-            reiniciarJogo(espacos);
+            gameControls.restart();
         }, 10);
     }
-    else if (verificarVitoria()) {
-        atualizarPontuacao(jogadorAtual, score1, score2);
+    else if (lineWin()) {
+        updateScore(jogadorAtual, score1, score2);
         setTimeout(() => {
             alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o round");
-            reiniciarJogo(espacos);
-            atualizarLife(jogadorAtual, 100);
+            gameControls.restart();
+            updateLife(jogadorAtual, 100);
         }, 10);
     }
     else {
@@ -51,14 +40,5 @@ function jogar(linha, coluna, espaco) {
     }
 }
 
-function reiniciarJogo(espacos) {
-    limparTabuleiro(espacos);
-    iniciarJogo();
-}
-
-function iniciarJogo() {
-    adicionarListeners(espacos, jogar);
-}
-
-
-iniciarJogo();
+const gameControls = initGame(jogar);
+gameControls.start();
