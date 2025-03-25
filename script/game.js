@@ -15,3 +15,7 @@ export function initGame(jogar) {
 
     return { start, restart };
 }
+
+export function alertMensage(currentPlayer, text) {
+    alert((currentPlayer === "X" ? "Player 1 " : "Player 2 ") + text);
+}

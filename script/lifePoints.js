@@ -11,13 +11,13 @@ export function updateScore(currentPlayer) {
     scoreElement.textContent = currentScore + 10;
 }
 
-export function updateLife(currentPlayer, vidaMaxima) {
+export function updateLife(currentPlayer) {
     if (currentPlayer === "X") {
         vidaP2 -= 50;
-        document.querySelector(`#player2 .life-bar`).style.width = `${(vidaP2 / vidaMaxima) * 100}%`;
+        document.querySelector(`#player2 .life-bar`).style.width = `${(vidaP2 / 100) * 100}%`;
     } else {
         vidaP1 -= 50;
-        document.querySelector(`#player1 .life-bar`).style.width = `${(vidaP1 / vidaMaxima) * 100}%`;
+        document.querySelector(`#player1 .life-bar`).style.width = `${(vidaP1 / 100) * 100}%`;
     }
 }
 

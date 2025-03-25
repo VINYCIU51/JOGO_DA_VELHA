@@ -17,10 +17,6 @@ export function validSpace(line, column) {
     return board[line][column] === "";
 }
 
-export function markSpace(line, column, currentPlayer, space) {
+export function markSpace(line, column, currentPlayer) {
     board[line][column] = currentPlayer;
-    space.innerHTML = `<div class="marked">${currentPlayer}</div>`;
-    space.firstElementChild.addEventListener('animationend', (e) => {
-        e.target.classList.remove('marked');
-    }, { once: true });
 }

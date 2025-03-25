@@ -137,7 +137,6 @@ body {
 }
 
 .board {
-    /* Classe renomeada */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -150,7 +149,6 @@ body {
 }
 
 .space {
-    /* Classe renomeada */
     pointer-events: auto;
     display: flex;
     align-items: center;
@@ -164,18 +162,21 @@ body {
     border: 6px solid black;
 }
 
-@keyframes animacao-escala {
+@keyframes scaleMark {
     0% {
-        transform: scale(2.0);
+        transform: scale(3);
+        opacity: 0;
     }
 
     100% {
-        transform: scale(1.0);
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
 .marked {
-    animation: animacao-escala 0.3s ease-out;
+    animation: scaleMark 0.3s ease-out forwards;
+    display: block;
 }
 
 .space:nth-child(1),
@@ -196,4 +197,12 @@ body {
 .space:nth-child(8),
 .space:nth-child(9) {
     border-bottom: none;
+}
+
+.space:hover::before {
+    content: attr(data-hover);
+    opacity: 0.3;
+    position: absolute;
+    font-size: 5rem;
+    font-weight: bold;
 }
