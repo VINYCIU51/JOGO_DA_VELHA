@@ -4,25 +4,23 @@ export const board = [
     ["", "", ""]
 ];
 
-export function clearBoard(espacos) {
+export function clearBoard(spaces) {
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
             board[i][j] = "";
         }
     }
-    espacos.forEach(espaco => { espaco.textContent = ""; });
+    spaces.forEach(space => { space.textContent = ""; });
 }
 
 export function validSpace(line, column) {
     return board[line][column] === "";
 }
 
-export function markSpace(line, column, currentPlayer, espaco) {
+export function markSpace(line, column, currentPlayer, space) {
     board[line][column] = currentPlayer;
-
-    // animacao de marcacao
-    espaco.innerHTML = `<div class="marcado">${currentPlayer}</div>`;
-    espaco.firstElementChild.addEventListener('animationend', (e) => {
-        e.target.classList.remove('marcado');
+    space.innerHTML = `<div class="marked">${currentPlayer}</div>`;
+    space.firstElementChild.addEventListener('animationend', (e) => {
+        e.target.classList.remove('marked');
     }, { once: true });
 }

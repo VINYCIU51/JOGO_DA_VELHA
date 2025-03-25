@@ -3,22 +3,22 @@ import { updateLife, updateScore } from './lifePoints.js';
 import { lifeWin, draw, lineWin } from './endGame.js';
 import { initGame } from './game.js';
 
-let jogadorAtual = "X";
+let currentPlayer = "X";
 
-export function jogar(linha, coluna, espaco) {
+export function jogar(line, column, space) {
 
     if (lifeWin()) {
         setTimeout(() => {
-            alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o jogo");
+            alert((currentPlayer === "X" ? "Player 1" : "Player 2") + " Venceu o jogo");
         }, 10);
         return;
     }
 
-    if (!validSpace(linha, coluna)) {
+    if (!validSpace(line, column)) {
         return;
     }
 
-    markSpace(linha, coluna, jogadorAtual, espaco);
+    markSpace(line, column, currentPlayer, space);
 
     if (draw()) {
         setTimeout(() => {
@@ -27,15 +27,15 @@ export function jogar(linha, coluna, espaco) {
         }, 10);
     }
     else if (lineWin()) {
-        updateScore(jogadorAtual);
+        updateScore(currentPlayer);
         setTimeout(() => {
-            alert((jogadorAtual === "X" ? "Player 1" : "Player 2") + " Venceu o round");
+            alert((currentPlayer === "X" ? "Player 1" : "Player 2") + " Venceu o round");
             gameControls.restart();
-            updateLife(jogadorAtual, 100);
+            updateLife(currentPlayer, 100);
         }, 10);
     }
     else {
-        jogadorAtual = jogadorAtual === "X" ? "O" : "X";
+        currentPlayer = currentPlayer === "X" ? "O" : "X";
     }
 }
 
