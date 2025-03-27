@@ -6,9 +6,9 @@ export let vidaP2 = 100;
 const { score1, score2 } = referencias();
 
 export function updateScore(currentPlayer) {
-    const scoreElement = currentPlayer === "X" ? score1 : score2;
-    const currentScore = parseInt(scoreElement.textContent) || 0;
-    scoreElement.textContent = currentScore + 10;
+    const playerScore = currentPlayer === "X" ? score1 : score2;
+    const currentScore = parseInt(playerScore.textContent) || 0;
+    playerScore.textContent = currentScore + 10;
 }
 
 export function updateLife(currentPlayer) {

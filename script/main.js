@@ -17,19 +17,22 @@ export function jogar(line, column, space) {
         return;
     }
 
-    markSpace(line, column, currentPlayer, space);
     animateMark(currentPlayer, space);
+    markSpace(line, column, currentPlayer, space);
 
     if (draw()) {
-        alert("Empate");
-        gameControls.restart();
-
+        setTimeout(() => {
+            alert("Empate");
+            gameControls.restart();
+        }, 10);
     }
     else if (lineWin()) {
-        updateScore(currentPlayer);
-        updateLife(currentPlayer);
-        if (!lifeWin()) { alertMensage(currentPlayer, "Venceu o Round!"); }
-        gameControls.restart();
+        setTimeout(() => {
+            updateScore(currentPlayer);
+            updateLife(currentPlayer);
+            if (!lifeWin()) { alertMensage(currentPlayer, "Venceu o Round!"); }
+            gameControls.restart();
+        }, 10);
     }
     else {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
