@@ -7,6 +7,7 @@ import { animateMark, predictPlay } from './animations.js';
 let currentPlayer = "X";
 
 export function jogar(line, column, space) {
+    predictPlay(currentPlayer);
 
     if (lifeWin()) {
         alertMensage(currentPlayer, "Venceu o Jogo!");
@@ -24,14 +25,20 @@ export function jogar(line, column, space) {
         setTimeout(() => {
             alert("Empate");
             gameControls.restart();
+            predictPlay(currentPlayer);
         }, 10);
     }
     else if (lineWin()) {
         setTimeout(() => {
             updateScore(currentPlayer);
             updateLife(currentPlayer);
-            if (!lifeWin()) { alertMensage(currentPlayer, "Venceu o Round!"); }
+
+            if (!lifeWin()) {
+                alertMensage(currentPlayer, "Venceu o Round!");
+            }
+
             gameControls.restart();
+            predictPlay(currentPlayer);
         }, 10);
     }
     else {
