@@ -10,7 +10,7 @@ export function clearBoard(spaces) {
             board[i][j] = "";
         }
     }
-    spaces.forEach(space => { space.textContent = ""; });
+    spaces.forEach(space => { space.textContent = ""; space.removeAttribute("data-hover"); });
 }
 
 export function validSpace(line, column) {
