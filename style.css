@@ -205,3 +205,28 @@ body {
     font-size: 5rem;
     font-weight: bold;
 }
+
+.round-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+    align-content: center;
+    padding: 30px 60px;
+    background-color: hsla(0, 0%, 3%, 0.9);
+    backdrop-filter: blur(3px);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 5rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.round-notification.show {
+    opacity: 1;
+}

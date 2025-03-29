@@ -9,10 +9,7 @@ export function predictPlay(currentPlayer) {
     });
 }
 
-
 export function animateMark(currentPlayer, space) {
-    space.innerHTML = '';
-
     const mark = document.createElement('div');
     mark.textContent = currentPlayer;
     mark.classList.add('marked');
@@ -21,4 +18,16 @@ export function animateMark(currentPlayer, space) {
     mark.addEventListener('animationend', () => {
         mark.classList.remove('marked');
     }, { once: true });
+}
+
+export function nextRound(roundNumber) {
+    const notification = document.querySelector('.round-notification');
+    const roundElement = document.getElementById('round-number');
+
+    roundElement.textContent = "Round " + roundNumber;
+    notification.classList.add('show');
+
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 1500);
 }

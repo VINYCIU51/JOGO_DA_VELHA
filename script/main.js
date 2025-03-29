@@ -2,9 +2,10 @@ import { markSpace, validSpace } from './boardGame.js';
 import { updateLife, updateScore } from './lifePoints.js';
 import { lifeWin, draw, lineWin } from './endGame.js';
 import { alertMensage, initGame } from './game.js';
-import { animateMark, predictPlay } from './animations.js';
+import { animateMark, nextRound, predictPlay } from './animations.js';
 
 let currentPlayer = "X";
+let currentRound = 1;
 
 export function jogar(line, column, space) {
     predictPlay(currentPlayer);
@@ -22,24 +23,24 @@ export function jogar(line, column, space) {
     markSpace(line, column, currentPlayer, space);
 
     if (draw()) {
-        setTimeout(() => {
-            alert("Empate");
-            gameControls.restart();
-            predictPlay(currentPlayer);
-        }, 10);
+        currentRound += 1;
+        nextRound(currentRound);
+        gameControls.restart();
+        predictPlay(currentPlayer);
+
     }
     else if (lineWin()) {
-        setTimeout(() => {
-            updateScore(currentPlayer);
-            updateLife(currentPlayer);
+        updateScore(currentPlayer);
+        updateLife(currentPlayer);
 
-            if (!lifeWin()) {
-                alertMensage(currentPlayer, "Venceu o Round!");
-            }
+        if (!lifeWin()) {
+            currentRound += 1;
+            nextRound(currentRound);
+        }
 
-            gameControls.restart();
-            predictPlay(currentPlayer);
-        }, 10);
+        gameControls.restart();
+        predictPlay(currentPlayer);
+
     }
     else {
         currentPlayer = currentPlayer === "X" ? "O" : "X";
