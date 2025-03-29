@@ -32,6 +32,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
 }
 
 #player1 {
@@ -146,6 +147,7 @@ body {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(3px);
     border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
 }
 
 .space {
@@ -164,7 +166,7 @@ body {
 
 @keyframes scaleMark {
     0% {
-        transform: scale(3);
+        transform: scale(4);
         opacity: 0;
     }
 
@@ -231,7 +233,7 @@ body {
     background-color: hsla(0, 0%, 0%, 0.781);
     backdrop-filter: blur(3px);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
     opacity: 0;
     z-index: -1;
 }
@@ -279,7 +281,7 @@ body {
     background-color: hsla(0, 0%, 0%, 0.781);
     backdrop-filter: blur(3px);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
     opacity: 0;
     z-index: -1;
 }
