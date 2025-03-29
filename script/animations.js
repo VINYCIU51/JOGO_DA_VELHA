@@ -2,9 +2,9 @@ export function predictPlay(currentPlayer) {
     const spaces = document.querySelectorAll(".space");
     spaces.forEach(space => {
         if (space.textContent === "") {
-            space.setAttribute("data-hover", currentPlayer);
+            space.dataset.ghostMark = currentPlayer;
         } else {
-            space.removeAttribute("data-hover");
+            delete space.dataset.ghostMark;
         }
     });
 }
