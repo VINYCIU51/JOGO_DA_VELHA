@@ -31,3 +31,12 @@ export function nextRound(roundNumber) {
         notification.classList.remove('show');
     }, 1500);
 }
+
+export function showWinner(currentPlayer) {
+    const notification = document.querySelector('.winner-notification');
+    const winnerElement = document.getElementById('winner');
+
+    winnerElement.textContent = (currentPlayer === "X" ? "Player 1" : "Player 2") + " Wins";
+    notification.classList.add('show');
+
+}

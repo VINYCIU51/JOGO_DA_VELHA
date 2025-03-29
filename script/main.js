@@ -2,7 +2,7 @@ import { markSpace, validSpace } from './boardGame.js';
 import { updateLife, updateScore } from './lifePoints.js';
 import { lifeWin, draw, lineWin } from './endGame.js';
 import { alertMensage, initGame } from './game.js';
-import { animateMark, nextRound, predictPlay } from './animations.js';
+import { animateMark, nextRound, predictPlay, showWinner } from './animations.js';
 
 let currentPlayer = "X";
 let currentRound = 1;
@@ -11,7 +11,7 @@ export function jogar(line, column, space) {
     predictPlay(currentPlayer);
 
     if (lifeWin()) {
-        alertMensage(currentPlayer, "Venceu o Jogo!");
+        showWinner(currentPlayer);
         return;
     }
 
