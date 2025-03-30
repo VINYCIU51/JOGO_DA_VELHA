@@ -33,108 +33,108 @@ body {
     backdrop-filter: blur(3px);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
-}
 
-#player1 {
-    display: grid;
-    grid-template-areas:
-        "avatar nome pontos"
-        "avatar vida pontos";
-    grid-template-columns: 100px 2fr 1fr;
-    grid-template-rows: 50px 50px;
-    gap: 3px;
-    width: 50dvw;
-    height: 100px;
-}
+    & #player1 {
+        display: grid;
+        grid-template-areas:
+            "avatar nome pontos"
+            "avatar vida pontos";
+        grid-template-columns: 100px 2fr 1fr;
+        grid-template-rows: 50px 50px;
+        gap: 3px;
+        width: 50dvw;
+        height: 100px;
 
-#player1 .avatar {
-    grid-area: avatar;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-image: url(templates/veia-branca.jpg);
-    background-size: cover;
-}
+        & .avatar {
+            grid-area: avatar;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-image: url(templates/veia-branca.jpg);
+            background-size: cover;
+        }
 
-#player1 .name {
-    grid-area: nome;
-    align-content: center;
-    padding: 5px;
-}
+        & .name {
+            grid-area: nome;
+            align-content: center;
+            padding: 5px;
+        }
 
-#player1 .life {
-    width: 100%;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-}
+        & .life {
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            overflow: hidden;
 
-#player1 .life-bar {
-    width: 100%;
-    height: 100%;
-    background-color: #4caf50;
-    transition: width 0.3s ease;
-}
+            & .life-bar {
+                width: 100%;
+                height: 100%;
+                background-color: #4caf50;
+                transition: width 0.3s ease;
+            }
+        }
 
-#player1 .points {
-    grid-area: pontos;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding: 5px;
-}
+        & .points {
+            grid-area: pontos;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 5px;
+        }
+    }
 
-#player2 {
-    display: grid;
-    grid-template-areas:
-        "pontos nome avatar"
-        "pontos vida avatar";
-    grid-template-columns: 1fr 2fr 100px;
-    grid-template-rows: 50px 50px;
-    gap: 3px;
-    width: 50dvw;
-    height: 100px;
-}
+    & #player2 {
+        display: grid;
+        grid-template-areas:
+            "pontos nome avatar"
+            "pontos vida avatar";
+        grid-template-columns: 1fr 2fr 100px;
+        grid-template-rows: 50px 50px;
+        gap: 3px;
+        width: 50dvw;
+        height: 100px;
 
-#player2 .avatar {
-    grid-area: avatar;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-image: url(templates/veia-morena.jpg);
-    background-size: cover;
-}
+        & .avatar {
+            grid-area: avatar;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-image: url(templates/veia-morena.jpg);
+            background-size: cover;
+        }
 
-#player2 .name {
-    grid-area: nome;
-    align-content: center;
-    text-align: end;
-    padding: 5px;
-}
+        & .name {
+            grid-area: nome;
+            align-content: center;
+            text-align: end;
+            padding: 5px;
+        }
 
-#player2 .life {
-    width: 100%;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    transform: scaleX(-1);
-}
+        & .life {
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: scaleX(-1);
 
-#player2 .life-bar {
-    width: 100%;
-    height: 100%;
-    background-color: #4caf50;
-    transition: width 0.3s ease;
-}
+            & .life-bar {
+                width: 100%;
+                height: 100%;
+                background-color: #4caf50;
+                transition: width 0.3s ease;
+            }
+        }
 
-#player2 .points {
-    grid-area: pontos;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 5px;
+        & .points {
+            grid-area: pontos;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 5px;
+        }
+    }
 }
 
 .board {
@@ -148,64 +148,52 @@ body {
     backdrop-filter: blur(3px);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
-}
 
-.space {
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    font-size: 5rem;
-    font-weight: bold;
-    text-align: center;
-    box-sizing: border-box;
-    overflow: hidden;
-    border: 6px solid black;
-}
+    & .space {
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: center;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: 6px solid black;
 
-@keyframes scaleMark {
-    0% {
-        transform: scale(4);
-        opacity: 0;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+            border-top: none;
+        }
+
+        &:nth-child(3n + 1) {
+            border-left: none;
+        }
+
+        &:nth-child(3n) {
+            border-right: none;
+        }
+
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9) {
+            border-bottom: none;
+        }
+
+        &:hover::before {
+            content: attr(data-ghost-mark);
+            opacity: 0.3;
+            position: absolute;
+            font-size: 5rem;
+            font-weight: bold;
+        }
     }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
+    & .marked {
+        animation: scaleMark 0.3s ease-out forwards;
     }
-}
-
-.marked {
-    animation: scaleMark 0.3s ease-out forwards;
-}
-
-.space:nth-child(1),
-.space:nth-child(2),
-.space:nth-child(3) {
-    border-top: none;
-}
-
-.space:nth-child(3n + 1) {
-    border-left: none;
-}
-
-.space:nth-child(3n) {
-    border-right: none;
-}
-
-.space:nth-child(7),
-.space:nth-child(8),
-.space:nth-child(9) {
-    border-bottom: none;
-}
-
-.space:hover::before {
-    content: attr(data-ghost-mark);
-    opacity: 0.3;
-    position: absolute;
-    font-size: 5rem;
-    font-weight: bold;
 }
 
 .round-notification {
@@ -220,38 +208,26 @@ body {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
-}
 
-.round-notification::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0%;
-    height: 80px;
-    background-color: hsla(0, 0%, 0%, 0.781);
-    backdrop-filter: blur(3px);
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
-    opacity: 0;
-    z-index: -1;
-}
-
-.round-notification.show::before,
-.round-notification.show {
-    animation: animation-line 0.3s ease-out forwards;
-}
-
-@keyframes animation-line {
-    0% {
+    &.show::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 0%;
+        height: 80px;
+        background-color: hsla(0, 0%, 0%, 0.781);
+        backdrop-filter: blur(3px);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
         opacity: 0;
+        z-index: -1;
     }
 
-    100% {
-        width: 80%;
-        opacity: 1;
+    &.show::before,
+    &.show {
+        animation: animation-line 0.3s ease-out forwards;
     }
 }
 
@@ -268,25 +244,49 @@ body {
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
+
+    &.show::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0%;
+        height: 80px;
+        background-color: hsla(0, 0%, 0%, 0.781);
+        backdrop-filter: blur(3px);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &.show,
+    &.show::before {
+        animation: animation-line 0.3s ease-out forwards;
+    }
 }
 
-.winner-notification.show::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 0%;
-    height: 80px;
-    background-color: hsla(0, 0%, 0%, 0.781);
-    backdrop-filter: blur(3px);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
-    opacity: 0;
-    z-index: -1;
+@keyframes scaleMark {
+    0% {
+        transform: scale(4);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-.winner-notification.show,
-.winner-notification.show::before {
-    animation: animation-line 0.3s ease-out forwards;
+@keyframes animation-line {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 80%;
+        opacity: 1;
+    }
 }
