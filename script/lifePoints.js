@@ -25,3 +25,8 @@ export function resetScore() {
     score1.textContent = "0";
     score2.textContent = "0";
 }
+
+export function resetLife() {
+    vidaP1 = 100;
+    vidaP2 = 100;
+}

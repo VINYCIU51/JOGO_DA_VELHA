@@ -41,11 +41,11 @@ export function showWinner(currentPlayer) {
 
 }
 
-export function playAgain() {
+export function ShowplayAgain() {
     const button = document.getElementById('play-again-button');
     button.classList.add('show');
     button.addEventListener("click", () => {
         button.classList.remove('show');
-        initGame();
+        newGame();
     }, { once: true });
 }
