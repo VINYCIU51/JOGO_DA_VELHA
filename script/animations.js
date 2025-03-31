@@ -20,7 +20,7 @@ export function animateMark(currentPlayer, space) {
     }, { once: true });
 }
 
-export function nextRound(roundNumber) {
+export function showRound(roundNumber) {
     const notification = document.querySelector('.round-notification');
     const roundElement = document.getElementById('round-number');
 
@@ -39,4 +39,13 @@ export function showWinner(currentPlayer) {
     winnerElement.textContent = (currentPlayer === "X" ? "Player 1" : "Player 2") + " Wins";
     notification.classList.add('show');
 
+}
+
+export function playAgain() {
+    const button = document.getElementById('play-again-button');
+    button.classList.add('show');
+    button.addEventListener("click", () => {
+        button.classList.remove('show');
+        initGame();
+    }, { once: true });
 }

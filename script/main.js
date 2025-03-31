@@ -1,8 +1,8 @@
 import { markSpace, validSpace } from './boardGame.js';
 import { updateLife, updateScore } from './lifePoints.js';
 import { lifeWin, draw, lineWin } from './endGame.js';
-import { alertMensage, initGame } from './game.js';
-import { animateMark, nextRound, predictPlay, showWinner } from './animations.js';
+import { initGame } from './game.js';
+import { animateMark, showRound, predictPlay, showWinner } from './animations.js';
 
 let currentPlayer = "X";
 let currentRound = 1;
@@ -24,8 +24,8 @@ export function jogar(line, column, space) {
 
     if (draw()) {
         currentRound += 1;
-        nextRound(currentRound);
-        gameControls.restart();
+        showRound(currentRound);
+        gameControls.newRound();
         predictPlay(currentPlayer);
 
     }
@@ -35,10 +35,10 @@ export function jogar(line, column, space) {
 
         if (!lifeWin()) {
             currentRound += 1;
-            nextRound(currentRound);
+            showRound(currentRound);
         }
 
-        gameControls.restart();
+        gameControls.newRound();
         predictPlay(currentPlayer);
 
     }

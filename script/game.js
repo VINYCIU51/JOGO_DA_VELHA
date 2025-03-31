@@ -1,19 +1,26 @@
 import { clearBoard } from './boardGame.js';
+import { resetScore } from './lifePoints.js';
 import { referencias, addListeners } from './ui.js';
 
 const { spaces } = referencias();
 
-export function initGame(jogar) {
+export function initGame(jogo) {
     function start() {
-        addListeners(spaces, jogar);
+        addListeners(spaces, jogo);
     }
 
-    function restart() {
+    function newRound() {
         clearBoard(spaces);
         start();
     }
 
-    return { start, restart };
+    return { start, newRound };
+}
+
+export function newGame(jogo) {
+    clearBoard(spaces);
+    resetScore();
+    start(jogo);
 }
 
 export function alertMensage(currentPlayer, text) {
