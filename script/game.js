@@ -5,21 +5,22 @@ export class Game {
         this.boardgame = boardInstance;
         this.playerInstance = playerInstance;
         this.spaces = referencias().spaces;
+        this.round = 1;
     }
 
     start(jogar) {
         addListeners(this.spaces, jogar);
     }
 
-    newRound(jogar) {
+    newRound() {
+        this.round++;
         this.boardgame.clearBoard(this.spaces);
-        this.start(jogar);
     }
 
-    newGame(jogar) {
+    newGame() {
         this.boardgame.clearBoard(this.spaces);
         this.playerInstance.reset();
-        this.start(jogar);
+        this.round = 1;
     }
 
     draw() {

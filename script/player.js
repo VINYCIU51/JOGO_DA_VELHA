@@ -27,7 +27,7 @@ export class Player {
         scoreElement.textContent = this.score[this._currentPlayer];
     }
 
-    updateLife(damage = 50) {
+    updateLife(damage = 40) {
         this.life[this.opponent] -= damage;
         const lifeElement = this.opponent === "X" ? lifeP1 : lifeP2;
         lifeElement.style.width = `${this.life[this.opponent]}%`;

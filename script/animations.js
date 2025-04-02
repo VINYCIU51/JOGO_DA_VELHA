@@ -51,7 +51,7 @@ export class GameAnimations {
 
         button.classList.add('show');
         button.addEventListener("click", () => {
-            this.game.newGame(jogar);
+            this.game.newGame();
             button.classList.remove('show');
             notification.classList.remove('show');
         }, { once: true });

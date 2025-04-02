@@ -3,21 +3,20 @@ import { Player } from './player.js';
 import { Game } from './game.js';
 import { GameAnimations } from './animations.js';
 
-// Create all instances in one place
 const boardgame = new Board();
 const playerInstance = new Player();
 const game = new Game(boardgame, playerInstance);
 const animation = new GameAnimations(game);
 
 let currentPlayer = playerInstance.currentPlayer;
-let currentRound = 1;
 
 export function jogar(line, column, space) {
     animation.predictPlay(currentPlayer);
 
     if (game.lifeWin()) {
+        boardgame.clearBoard(space);
         animation.showWinner(currentPlayer);
-        animation.ShowplayAgain();
+        game.newGame();
         return;
     }
 
@@ -36,16 +35,14 @@ export function jogar(line, column, space) {
             animation.showWinner(currentPlayer);
             animation.ShowplayAgain();
         } else {
-            currentRound++;
-            game.newRound(jogar);
-            animation.showRound(currentRound);
+            game.newRound();
+            animation.showRound(game.round);
             animation.predictPlay(currentPlayer);
         }
     }
     else if (game.draw()) {
-        currentRound++;
-        game.newRound(jogar);
-        animation.showRound(currentRound);
+        game.newRound();
+        animation.showRound(game.round);
         animation.predictPlay(currentPlayer);
     }
     else {
