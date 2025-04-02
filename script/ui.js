@@ -9,14 +9,14 @@ export function referencias() {
 
 export function addListeners(spaces, mainGame) {
     spaces.forEach((space, indice) => {
-        space.removeEventListener("click", space._mainGameHandler);
+        space.removeEventListener("click", space.clickHandler);
 
-        space._mainGameHandler = () => {
+        space.clickHandler = () => {
             const linha = Math.floor(indice / 3);
             const coluna = indice % 3;
             mainGame(linha, coluna, space);
         };
 
-        space.addEventListener("click", space._mainGameHandler);
+        space.addEventListener("click", space.clickHandler);
     });
 }

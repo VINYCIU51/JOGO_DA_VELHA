@@ -15,7 +15,7 @@ export function mainGame(line, column, space) {
 
     if (game.lifeWin()) {
         boardgame.clearBoard(space);
-        animation.showWinner(currentPlayer);
+        animation.ShowplayAgain();
         return;
     }
 
