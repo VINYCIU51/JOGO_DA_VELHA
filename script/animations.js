@@ -1,5 +1,8 @@
-
 export class GameAnimations {
+    constructor(game) {
+        this.game = game;
+    }
+
     predictPlay(currentPlayer) {
         const spaces = document.querySelectorAll(".space");
         spaces.forEach(space => {
@@ -40,7 +43,6 @@ export class GameAnimations {
 
         winnerElement.textContent = (currentPlayer === "X" ? "Player 1" : "Player 2") + " Wins";
         notification.classList.add('show');
-
     }
 
     ShowplayAgain() {
@@ -49,7 +51,7 @@ export class GameAnimations {
 
         button.classList.add('show');
         button.addEventListener("click", () => {
-            game.newGame(jogar);
+            this.game.newGame(jogar);
             button.classList.remove('show');
             notification.classList.remove('show');
         }, { once: true });

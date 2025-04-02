@@ -1,10 +1,13 @@
-import { markSpace, validSpace } from './boardGame.js';
-import { playerInstance } from './player.js';
+import { Board } from './boardGame.js';
+import { Player } from './player.js';
 import { Game } from './game.js';
 import { GameAnimations } from './animations.js';
 
-const animation = new GameAnimations();
-const game = new Game();
+// Create all instances in one place
+const boardgame = new Board();
+const playerInstance = new Player();
+const game = new Game(boardgame, playerInstance);
+const animation = new GameAnimations(game);
 
 let currentPlayer = playerInstance.currentPlayer;
 let currentRound = 1;
@@ -18,12 +21,12 @@ export function jogar(line, column, space) {
         return;
     }
 
-    if (!validSpace(line, column)) {
+    if (!boardgame.validSpace(line, column)) {
         return;
     }
 
     animation.animateMark(currentPlayer, space);
-    markSpace(line, column, currentPlayer);
+    boardgame.markSpace(line, column, currentPlayer);
 
     if (game.lineWin()) {
         playerInstance.updateScore();
@@ -44,7 +47,6 @@ export function jogar(line, column, space) {
         game.newRound(jogar);
         animation.showRound(currentRound);
         animation.predictPlay(currentPlayer);
-        // Não troca o jogador, mantém o mesmo para o novo round
     }
     else {
         playerInstance.switch();

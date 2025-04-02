@@ -38,13 +38,9 @@ export class Player {
         this.score = { X: 0, O: 0 };
         this.life = { X: 100, O: 100 };
 
-        // Atualiza a UI
-        const { scoreP1, scoreP2, lifeP1, lifeP2 } = referencias();
         scoreP1.textContent = "0";
         scoreP2.textContent = "0";
         lifeP1.style.width = "100%";
         lifeP2.style.width = "100%";
     }
 }
-
-export const playerInstance = new Player;
