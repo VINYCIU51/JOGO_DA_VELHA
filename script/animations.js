@@ -54,6 +54,8 @@ export class GameAnimations {
             this.game.newGame();
             button.classList.remove('show');
             notification.classList.remove('show');
+
+            this.predictPlay(this.game.playerInstance.currentPlayer);
         }, { once: true });
     }
 }

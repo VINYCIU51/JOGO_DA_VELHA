@@ -10,13 +10,12 @@ const animation = new GameAnimations(game);
 
 let currentPlayer = playerInstance.currentPlayer;
 
-export function jogar(line, column, space) {
+export function mainGame(line, column, space) {
     animation.predictPlay(currentPlayer);
 
     if (game.lifeWin()) {
         boardgame.clearBoard(space);
         animation.showWinner(currentPlayer);
-        game.newGame();
         return;
     }
 
@@ -53,4 +52,4 @@ export function jogar(line, column, space) {
 }
 
 animation.predictPlay(currentPlayer);
-game.start(jogar);
+game.start(mainGame);

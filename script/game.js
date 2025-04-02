@@ -8,8 +8,8 @@ export class Game {
         this.round = 1;
     }
 
-    start(jogar) {
-        addListeners(this.spaces, jogar);
+    start(mainGame) {
+        addListeners(this.spaces, mainGame);
     }
 
     newRound() {

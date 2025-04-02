@@ -7,16 +7,16 @@ export function referencias() {
     return { scoreP1, scoreP2, lifeP1, lifeP2, spaces };
 }
 
-export function addListeners(spaces, jogar) {
+export function addListeners(spaces, mainGame) {
     spaces.forEach((space, indice) => {
-        space.removeEventListener("click", space._jogarHandler);
+        space.removeEventListener("click", space._mainGameHandler);
 
-        space._jogarHandler = () => {
+        space._mainGameHandler = () => {
             const linha = Math.floor(indice / 3);
             const coluna = indice % 3;
-            jogar(linha, coluna, space);
+            mainGame(linha, coluna, space);
         };
 
-        space.addEventListener("click", space._jogarHandler);
+        space.addEventListener("click", space._mainGameHandler);
     });
 }
