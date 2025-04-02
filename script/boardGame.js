@@ -10,7 +10,11 @@ export function clearBoard(spaces) {
             board[i][j] = "";
         }
     }
-    spaces.forEach(space => { space.textContent = ""; space.removeAttribute("data-hover"); });
+    spaces.forEach(space => {
+
+        space.removeAttribute("data-ghost-mark");
+        space.innerHTML = "";
+    });
 }
 
 export function validSpace(line, column) {

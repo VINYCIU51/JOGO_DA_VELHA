@@ -1,17 +1,20 @@
 import { markSpace, validSpace } from './boardGame.js';
-import { updateLife, updateScore } from './lifePoints.js';
-import { lifeWin, draw, lineWin } from './endGame.js';
-import { initGame } from './game.js';
-import { animateMark, showRound, predictPlay, showWinner } from './animations.js';
+import { playerInstance } from './player.js';
+import { Game } from './game.js';
+import { GameAnimations } from './animations.js';
 
-let currentPlayer = "X";
+const animation = new GameAnimations();
+const game = new Game();
+
+let currentPlayer = playerInstance.currentPlayer;
 let currentRound = 1;
 
 export function jogar(line, column, space) {
-    predictPlay(currentPlayer);
+    animation.predictPlay(currentPlayer);
 
-    if (lifeWin()) {
-        showWinner(currentPlayer);
+    if (game.lifeWin()) {
+        animation.showWinner(currentPlayer);
+        animation.ShowplayAgain();
         return;
     }
 
@@ -19,35 +22,36 @@ export function jogar(line, column, space) {
         return;
     }
 
-    animateMark(currentPlayer, space);
-    markSpace(line, column, currentPlayer, space);
+    animation.animateMark(currentPlayer, space);
+    markSpace(line, column, currentPlayer);
 
-    if (draw()) {
-        currentRound += 1;
-        showRound(currentRound);
-        gameControls.newRound();
-        predictPlay(currentPlayer);
+    if (game.lineWin()) {
+        playerInstance.updateScore();
+        playerInstance.updateLife();
 
-    }
-    else if (lineWin()) {
-        updateScore(currentPlayer);
-        updateLife(currentPlayer);
-
-        if (!lifeWin()) {
-            currentRound += 1;
-            showRound(currentRound);
+        if (game.lifeWin()) {
+            animation.showWinner(currentPlayer);
+            animation.ShowplayAgain();
+        } else {
+            currentRound++;
+            game.newRound(jogar);
+            animation.showRound(currentRound);
+            animation.predictPlay(currentPlayer);
         }
-
-        gameControls.newRound();
-        predictPlay(currentPlayer);
-
+    }
+    else if (game.draw()) {
+        currentRound++;
+        game.newRound(jogar);
+        animation.showRound(currentRound);
+        animation.predictPlay(currentPlayer);
+        // Não troca o jogador, mantém o mesmo para o novo round
     }
     else {
-        currentPlayer = currentPlayer === "X" ? "O" : "X";
-        predictPlay(currentPlayer);
+        playerInstance.switch();
+        currentPlayer = playerInstance.currentPlayer;
+        animation.predictPlay(currentPlayer);
     }
 }
 
-predictPlay(currentPlayer);
-const gameControls = initGame(jogar);
-gameControls.start();
+animation.predictPlay(currentPlayer);
+game.start(jogar);
