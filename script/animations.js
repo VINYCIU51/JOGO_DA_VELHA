@@ -26,14 +26,19 @@ export class GameAnimations {
     }
 
     showRound(roundNumber) {
-        const notification = document.querySelector('.round-notification');
-        const roundElement = document.getElementById('round-number');
+        const notification = document.querySelector(".round-notification");
+        const roundElement = document.getElementById("round-number");
 
         roundElement.textContent = "Round " + roundNumber;
-        notification.classList.add('show');
+        notification.classList.add("show");
 
         setTimeout(() => {
-            notification.classList.remove('show');
+            notification.classList.add("hide");
+
+            notification.addEventListener("animationend", () => {
+                notification.classList.remove("hide");
+                notification.classList.remove("show");
+            }, { once: true });
         }, 1500);
     }
 
@@ -53,7 +58,12 @@ export class GameAnimations {
         button.addEventListener("click", () => {
             this.game.newGame();
             button.classList.remove('show');
-            notification.classList.remove('show');
+            notification.classList.add("hide");
+
+            notification.addEventListener("animationend", () => {
+                notification.classList.remove("hide");
+                notification.classList.remove("show");
+            }, { once: true });
 
             this.predictPlay(this.game.playerInstance.currentPlayer);
         }, { once: true });

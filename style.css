@@ -52,8 +52,9 @@ body {
             height: 110px;
             width: 110px;
             border-radius: 50%;
-            background-image: url(templates/veia-branca.jpg);
+            background-image: url(/templates/veia1.png);
             background-size: cover;
+            transition: background-image 0.5s ease-in-out;
         }
 
         & .name {
@@ -104,6 +105,7 @@ body {
             border-radius: 50%;
             background-image: url(templates/veia-morena.jpg);
             background-size: cover;
+            transition: background-image 0.3s ease-in-out;
         }
 
         & .name {
@@ -244,6 +246,10 @@ body {
     &.show {
         animation: animation-growth 0.3s ease-out forwards;
     }
+
+    &.hide {
+        animation: animation-shrink 0.3s ease-out forwards;
+    }
 }
 
 .winner-notification {
@@ -280,13 +286,17 @@ body {
     &.show::before {
         animation: animation-growth 0.3s ease-out forwards;
     }
+
+    &.hide {
+        animation: animation-shrink 0.3s ease-out forwards;
+    }
 }
 
 @keyframes animation-growth {
     0% {
-        font-size: 0rem;
-        width: 0rem;
-        height: 0rem;
+        font-size: 0;
+        width: 0;
+        height: 0;
         opacity: 0;
     }
 
@@ -297,6 +307,23 @@ body {
         opacity: 1;
     }
 }
+
+@keyframes animation-shrink {
+    0% {
+        font-size: 5rem;
+        width: 35rem;
+        height: 8rem;
+        opacity: 1;
+    }
+
+    100% {
+        font-size: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+}
+
 
 #play-again-button {
     position: fixed;

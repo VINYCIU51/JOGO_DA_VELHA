@@ -34,7 +34,6 @@ export class Player {
     }
 
     reset() {
-        this._currentPlayer = "X";
         this.score = { X: 0, O: 0 };
         this.life = { X: 100, O: 100 };
 
