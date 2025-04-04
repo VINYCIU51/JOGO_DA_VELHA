@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: "Dosis", sans-serif;
+}
+
+header {
+    background-color: aqua;
+    display: flex;
+    position: absolute;
+    top: 10%;
+    height: min(30%, 30rem);
+    width: min(95%, 80rem);
+    justify-content: center;
+    align-items: center;
+    font-size: 8rem;
+}
+
+.buttons {
+    background-color: aquamarine;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+
+    & .button {
+        text-align: center;
+        line-height: 6rem;
+        background-color: antiquewhite;
+        height: 6rem;
+        width: 30rem;
+        border-radius: 15px;
+        border: none;
+        font-weight: 900;
+        font-size: 30px;
+        text-decoration: none;
+        display: inline-block;
+        color: inherit;
+    }
+}
+
+footer {
+    position: absolute;
+    top: 95%;
+}
