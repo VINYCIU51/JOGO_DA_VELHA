@@ -51,21 +51,27 @@ export class GameAnimations {
     }
 
     ShowplayAgain() {
-        const button = document.getElementById('play-again-button');
+        const buttons = [
+            document.getElementById('play-again-button'),
+            document.getElementById("back-menu-button")];
+
         const notification = document.querySelector('.winner-notification');
 
-        button.classList.add('show');
-        button.addEventListener("click", () => {
-            this.game.newGame();
-            button.classList.remove('show');
-            notification.classList.add("hide");
+        buttons.forEach(button => {
 
-            notification.addEventListener("animationend", () => {
-                notification.classList.remove("hide");
-                notification.classList.remove("show");
+            button.classList.add('show');
+            button.addEventListener("click", () => {
+                this.game.newGame();
+                buttons.forEach(btn => btn.classList.remove('show'));
+                notification.classList.add("hide");
+
+                notification.addEventListener("animationend", () => {
+                    notification.classList.remove("hide");
+                    notification.classList.remove("show");
+                }, { once: true });
+
+                this.predictPlay(this.game.playerInstance.currentPlayer);
             }, { once: true });
-
-            this.predictPlay(this.game.playerInstance.currentPlayer);
-        }, { once: true });
+        })
     }
 }

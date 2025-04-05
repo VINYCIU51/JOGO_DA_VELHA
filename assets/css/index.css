@@ -15,6 +15,21 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+
+    &::before {
+        content: "";
+        position: fixed;
+        bottom: 0px;
+        right: -15px;
+        width: clamp(400px, 30vw, 800px);
+        height: clamp(400px, 30vw, 800px);
+        background-image: url(/assets/images/vovo-turbo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+        filter: drop-shadow(-8px -12px 0 rgb(255, 255, 255));
+    }
 }
 
 header {
@@ -49,10 +64,45 @@ header {
         font-size: 50px;
         text-decoration: none;
         display: inline-block;
-        color: inherit;
-        box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.37);
+        background-color: rgba(245, 245, 245, 0.664);
+        backdrop-filter: blur(2px);
+        box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.37);
+
+        &:hover {
+            background-color: rgba(245, 245, 245, 0.822);
+            transform: scale(1.05);
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100px;
+        width: 200px;
+        top: 68%;
+        left: 70%;
+        background-image: url(/assets/images/coming-soon.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 10;
+        animation: pulsar 2s infinite ease-in-out;
+        transform-origin: center;
     }
 }
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform: rotate(-20deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-20deg) scale(1.1);
+    }
+}
+
 
 footer {
     position: absolute;
