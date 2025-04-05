@@ -74,12 +74,12 @@ header {
         }
     }
 
-    &::before {
+    & #multiplayer::before {
         content: "";
         position: absolute;
         height: 100px;
         width: 200px;
-        top: 68%;
+        top: 20%;
         left: 70%;
         background-image: url(/assets/images/coming-soon.png);
         background-size: contain;
