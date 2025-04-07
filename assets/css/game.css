@@ -51,7 +51,7 @@ body {
             height: 110px;
             width: 110px;
             border-radius: 50%;
-            background-image: url(/assets/images/veia1.png);
+            background-image: url(/assets/images/blue_granny_front.png);
             background-size: cover;
             transition: background-image 0.5s ease-in-out;
         }
@@ -102,7 +102,7 @@ body {
             height: 110px;
             width: 110px;
             border-radius: 50%;
-            background-image: url(/assets/images/veia-morena.jpg);
+            background-image: url(/assets/images/yellow_granny_front.png);
             background-size: cover;
             transition: background-image 0.3s ease-in-out;
         }
@@ -327,7 +327,7 @@ body {
 #play-again-button {
     position: fixed;
     top: 60%;
-    left: 60%;
+    left: clamp(40%, 55%, 55%);
     transform: translate(-50%, -50%);
     height: 3rem;
     width: 9rem;
@@ -355,7 +355,7 @@ body {
 #back-menu-button {
     position: fixed;
     top: 60%;
-    left: 40%;
+    left: clamp(40%, 45%, 45%);
     transform: translate(-50%, -50%);
     height: 3rem;
     width: 9rem;

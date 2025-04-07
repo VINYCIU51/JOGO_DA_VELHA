@@ -10,25 +10,37 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     font-family: "Fugaz One";
-    background-image: url(/assets/images/seiko.avif);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
     min-height: 100vh;
 
     &::before {
         content: "";
-        position: fixed;
-        bottom: 0px;
-        right: -15px;
-        width: clamp(400px, 30vw, 800px);
-        height: clamp(400px, 30vw, 800px);
-        background-image: url(/assets/images/vovo-turbo.png);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50vw;
+        height: 90vh;
+        background-image: url(/assets/images/blue_granny.png);
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
-        z-index: -1;
-        filter: drop-shadow(-8px -12px 0 rgb(255, 255, 255));
+        background-position: left bottom;
+        z-index: 1;
+        filter: drop-shadow(-8px -12px 20px rgb(2, 13, 116));
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50vw;
+        height: 90vh;
+        background-image: url(/assets/images/yellow_granny.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        z-index: 1;
+        filter: drop-shadow(-8px -12px 20px rgb(136, 44, 1));
     }
 }
 
@@ -43,6 +55,8 @@ header {
     font-family: "Fugaz One";
     font-size: clamp(4rem, 8vw, 8rem);
     text-shadow: 2px 10px 5px rgba(0, 0, 0, 0.37);
+    color: aliceblue;
+    z-index: 5;
 }
 
 .buttons {
@@ -62,14 +76,16 @@ header {
         font-family: "Fugaz One";
         font-weight: 900;
         font-size: 50px;
+        color: aliceblue;
         text-decoration: none;
         display: inline-block;
-        background-color: rgba(245, 245, 245, 0.664);
+        background: linear-gradient(to bottom, rgba(14, 14, 14, 0.650), rgba(177, 8, 8, 0.65));
         backdrop-filter: blur(2px);
         box-shadow: 2px 10px 5px rgba(0, 0, 0, 0.37);
+        z-index: 5;
 
         &:hover {
-            background-color: rgba(245, 245, 245, 0.822);
+            background: linear-gradient(to bottom, rgba(14, 14, 14, 0.726), rgba(228, 7, 7, 0.788));
             transform: scale(1.05);
         }
     }
@@ -106,9 +122,19 @@ header {
 
 footer {
     position: absolute;
-    top: 95%;
+    top: 97%;
     color: rgb(0, 0, 0);
     font-weight: 900;
     text-shadow: 0 0 5px rgb(0, 0, 0);
     font-family: 'Courier New', Courier, monospace;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
