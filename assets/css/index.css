@@ -10,7 +10,10 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     font-family: "Fugaz One";
-
+    background-image: url(/assets/images/fire-house.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     min-height: 100vh;
 
     &::before {
@@ -127,14 +130,4 @@ footer {
     font-weight: 900;
     text-shadow: 0 0 5px rgb(0, 0, 0);
     font-family: 'Courier New', Courier, monospace;
-}
-
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
 }
