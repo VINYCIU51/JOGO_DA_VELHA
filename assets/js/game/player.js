@@ -31,6 +31,7 @@ export class Player {
         this.life[this.opponent] -= damage;
         const lifeElement = this.opponent === "X" ? lifeP1 : lifeP2;
         lifeElement.style.width = `${this.life[this.opponent]}%`;
+
     }
 
     reset() {

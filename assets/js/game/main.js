@@ -13,6 +13,7 @@ let currentPlayer = playerInstance.currentPlayer;
 export function mainGame(line, column, space) {
     animation.predictPlay(currentPlayer);
 
+
     if (game.lifeWin()) {
         boardgame.clearBoard(space);
         animation.ShowplayAgain();
@@ -29,6 +30,7 @@ export function mainGame(line, column, space) {
     if (game.lineWin()) {
         playerInstance.updateScore();
         playerInstance.updateLife();
+        animation.updateAvatar(playerInstance.opponent, playerInstance.life[playerInstance.opponent]);
 
         if (game.lifeWin()) {
             animation.showWinner(currentPlayer);
@@ -36,6 +38,7 @@ export function mainGame(line, column, space) {
         } else {
             game.newRound();
             animation.showRound(game.round);
+            animation.updateBackground(currentPlayer);
             animation.predictPlay(currentPlayer);
         }
     }
