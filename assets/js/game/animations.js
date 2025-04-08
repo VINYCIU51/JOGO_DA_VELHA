@@ -98,6 +98,13 @@ export class GameAnimations {
             ];
         } else if (currentPlayer === "O") {
             granny = document.querySelector("#player2 .avatar");
+            dmgImage = [
+                "/assets/images/yellow_granny_front.png",
+                "/assets/images/yellow-dmg1.png",
+                "/assets/images/yellow-dmg2.png",
+                "/assets/images/yellow-dmg3.png",
+                "/assets/images/yellow-dmg4.png",
+            ];
         }
 
 
