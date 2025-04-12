@@ -28,7 +28,7 @@ export class Notifications {
         notification.classList.add('show');
     }
 
-    ShowplayAgain() {
+    showplayAgain() {
         const buttons = [
             document.getElementById('play-again-button'),
             document.getElementById("back-menu-button")];
