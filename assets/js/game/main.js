@@ -1,7 +1,7 @@
 import { Board } from './boardGame.js';
 import { Player } from './player.js';
 import { Game } from './game.js';
-import { GameAnimations } from './animations.js';
+import { GameAnimations } from './animations/index.js';
 
 const boardgame = new Board();
 const playerInstance = new Player();
@@ -11,12 +11,12 @@ const animation = new GameAnimations(game);
 let currentPlayer = playerInstance.currentPlayer;
 
 export function mainGame(line, column, space) {
-    animation.predictPlay(currentPlayer);
+    animation.mark.predictPlay(currentPlayer);
 
 
     if (game.lifeWin()) {
         boardgame.clearBoard(space);
-        animation.ShowplayAgain();
+        animation.not.ShowplayAgain();
         return;
     }
 
@@ -24,35 +24,35 @@ export function mainGame(line, column, space) {
         return;
     }
 
-    animation.animateMark(currentPlayer, space);
+    animation.mark.animateMark(currentPlayer, space);
     boardgame.markSpace(line, column, currentPlayer);
 
     if (game.lineWin()) {
         playerInstance.updateScore();
         playerInstance.updateLife();
-        animation.updateAvatar(playerInstance.opponent, playerInstance.life[playerInstance.opponent]);
+        animation.img.updateAvatar(playerInstance.opponent, playerInstance.life[playerInstance.opponent]);
 
         if (game.lifeWin()) {
-            animation.showWinner(currentPlayer);
-            animation.ShowplayAgain();
+            animation.not.showWinner(currentPlayer);
+            animation.not.ShowplayAgain();
         } else {
             game.newRound();
-            animation.showRound(game.round);
-            animation.updateBackground(currentPlayer);
-            animation.predictPlay(currentPlayer);
+            animation.not.showRound(game.round);
+            animation.img.updateBackground(currentPlayer);
+            animation.mark.predictPlay(currentPlayer);
         }
     }
     else if (game.draw()) {
         game.newRound();
-        animation.showRound(game.round);
-        animation.predictPlay(currentPlayer);
+        animation.not.showRound(game.round);
+        animation.mark.predictPlay(currentPlayer);
     }
     else {
         playerInstance.switch();
         currentPlayer = playerInstance.currentPlayer;
-        animation.predictPlay(currentPlayer);
+        animation.mark.predictPlay(currentPlayer);
     }
 }
 
-animation.predictPlay(currentPlayer);
+animation.mark.predictPlay(currentPlayer);
 game.start(mainGame);

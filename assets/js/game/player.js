@@ -28,7 +28,7 @@ export class Player {
     }
 
     updateLife(damage = 40) {
-        this.life[this.opponent] -= damage;
+        this.life[this.opponent] = Math.max(0, this.life[this.opponent] - damage);
         const lifeElement = this.opponent === "X" ? lifeP1 : lifeP2;
         lifeElement.style.width = `${this.life[this.opponent]}%`;
 
