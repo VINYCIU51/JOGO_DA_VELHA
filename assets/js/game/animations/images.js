@@ -1,25 +1,26 @@
-export class Damage {
+export class Images {
 
-    updateBackground(currentPlayer) {
-        const bg = document.querySelector("body");
-        if (currentPlayer === "O") {
-            bg.style.backgroundImage = `url('/assets/images/y-punch-b.png')`;
-        }
-
-    }
-
-    updateAvatar(currentPlayer, life) {
+    updateImages(currentPlayer, life) {
         let dmgImage;
         let granny;
+        let bgImage;
+        let background = document.querySelector("body");
 
         if (currentPlayer == "X") {
             granny = document.querySelector("#player1 .avatar");
+
             dmgImage = [
                 "/assets/images/blue_granny_front.png",
                 "/assets/images/blue-dmg1.png",
                 "/assets/images/blue-dmg2.png",
                 "/assets/images/blue-dmg3.png",
                 "/assets/images/blue-dmg4.png",
+            ];
+
+            bgImage = [
+                "/assets/images/y-punch-b.png",
+                "/assets/images/y-kick-b.png",
+                //"/assets/images/y-cut-b.png",
             ];
         } else if (currentPlayer === "O") {
             granny = document.querySelector("#player2 .avatar");
@@ -29,6 +30,11 @@ export class Damage {
                 "/assets/images/yellow-dmg2.png",
                 "/assets/images/yellow-dmg3.png",
                 "/assets/images/yellow-dmg4.png",
+            ];
+
+            bgImage = [
+                "/assets/images/b-punch-y.png",
+                "/assets/images/b-kick-y.png",
             ];
         }
 
@@ -42,5 +48,18 @@ export class Damage {
         else dmgState = 4;
 
         granny.style.backgroundImage = `url('${dmgImage[dmgState]}')`;
+
+        const bgState = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+        background.style.backgroundImage = `url('${bgImage[bgState]}')`
+    }
+
+    resetImages() {
+        const granny1 = document.querySelector("#player1 .avatar");
+        const granny2 = document.querySelector("#player2 .avatar");
+        const background = document.querySelector("body");
+
+        granny1.style.backgroundImage = "url(/assets/images/blue_granny_front.png)";
+        granny2.style.backgroundImage = "url(/assets/images/yellow_granny_front.png)";
+        background.style.backgroundImage = "url(/assets/images/yVSb-game-background.png)";
     }
 }

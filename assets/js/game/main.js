@@ -29,15 +29,14 @@ export function mainGame(line, column, space) {
     if (game.lineWin()) {
         playerInstance.updateScore();
         playerInstance.updateLife();
-        animations.updateAvatar(playerInstance.opponent, playerInstance.life[playerInstance.opponent]);
+        animations.updateImages(playerInstance.opponent, playerInstance.life[playerInstance.opponent]);
 
         if (game.lifeWin()) {
             animations.showWinner(currentPlayer);
-            animations.ShowplayAgain();
+            animations.showplayAgain();
         } else {
             game.newRound();
             animations.showRound(game.round);
-            animations.updateBackground(currentPlayer);
             animations.predictPlay(currentPlayer);
         }
     }

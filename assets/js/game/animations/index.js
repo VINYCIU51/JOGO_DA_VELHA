@@ -1,10 +1,10 @@
-import { Damage } from "./damage.js";
+import { Images } from "./images.js";
 import { Notifications } from "./notifications.js";
 import { BoardAnimations } from "./board.js";
 
 export class GameAnimations {
     constructor(game) {
-        this._damage = new Damage();
+        this._images = new Images();
         this._notifications = new Notifications(game);
         this._board = new BoardAnimations();
     }
@@ -18,13 +18,13 @@ export class GameAnimations {
         return this._board.animateMark(currentPlayer, space);
     }
 
-    // Métodos de Damage
-    updateBackground(currentPlayer) {
-        return this._damage.updateBackground(currentPlayer);
+    // Métodos de Images
+    updateImages(currentPlayer, life) {
+        return this._images.updateImages(currentPlayer, life);
     }
 
-    updateAvatar(currentPlayer, life) {
-        return this._damage.updateAvatar(currentPlayer, life);
+    resetImages() {
+        return this._images.resetImages();
     }
 
     // Métodos de Notifications
