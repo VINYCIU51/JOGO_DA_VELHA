@@ -1,6 +1,9 @@
+import { Images } from "./images.js";
+
 export class Notifications {
     constructor(game) {
         this.game = game;
+        this.images = new Images;
     }
 
     showRound(roundNumber) {
@@ -28,7 +31,7 @@ export class Notifications {
         notification.classList.add('show');
     }
 
-    ShowplayAgain() {
+    showplayAgain() {
         const buttons = [
             document.getElementById('play-again-button'),
             document.getElementById("back-menu-button")];
@@ -39,6 +42,7 @@ export class Notifications {
             button.classList.add('show');
             button.addEventListener("click", () => {
                 this.game.newGame();
+                this.images.resetImages();
 
                 buttons.forEach(btn => btn.classList.remove('show'));
                 notification.classList.add("hide");
