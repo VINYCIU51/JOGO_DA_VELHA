@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Runtoe";
+    src: url("/assets/fonts/Runtoe.otf") format("opentype"),
+        url("/assets/fonts/Runtoe.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +17,8 @@ body {
     flex-wrap: nowrap;
     padding: 6rem 1rem;
     row-gap: 12rem;
-    font-family: "Dosis", sans-serif;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-family: "Runtoe";
+    font-size: 1.6rem;
     background-image: url(/assets/images/yVSb-game-background.png);
     background-size: cover;
     background-position: center;
@@ -158,8 +163,7 @@ body {
         align-items: center;
         justify-content: center;
         background-color: transparent;
-        font-size: 5rem;
-        font-weight: bold;
+        font-size: 6rem;
         text-align: center;
         box-sizing: border-box;
         overflow: hidden;
