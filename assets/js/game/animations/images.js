@@ -20,7 +20,7 @@ export class Images {
             bgImage = [
                 "/assets/images/y-punch-b.png",
                 "/assets/images/y-kick-b.png",
-                //"/assets/images/y-cut-b.png",
+                "/assets/images/y-cut-b.png",
             ];
         } else if (currentPlayer === "O") {
             granny = document.querySelector("#player2 .avatar");
@@ -35,6 +35,7 @@ export class Images {
             bgImage = [
                 "/assets/images/b-punch-y.png",
                 "/assets/images/b-kick-y.png",
+                "/assets/images/b-power-y.png",
             ];
         }
 
@@ -49,7 +50,7 @@ export class Images {
 
         granny.style.backgroundImage = `url('${dmgImage[dmgState]}')`;
 
-        const bgState = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+        const bgState = Math.floor(Math.random() * (2 - 0 + 1) + 0);
         background.style.backgroundImage = `url('${bgImage[bgState]}')`
     }
 
