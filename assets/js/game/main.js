@@ -2,6 +2,7 @@ import { Board } from './boardGame.js';
 import { Player } from './player.js';
 import { Game } from './game.js';
 import { GameAnimations } from './animations/index.js';
+import { startMusic } from './sound.js';
 
 const boardgame = new Board();
 const playerInstance = new Player();
@@ -52,5 +53,6 @@ export function mainGame(line, column, space) {
     }
 }
 
+startMusic();
 animations.predictPlay(currentPlayer);
 game.start(mainGame);
