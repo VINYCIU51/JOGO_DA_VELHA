@@ -18,6 +18,22 @@
     </div>
 
     <footer>@Created by Vinycius Alves</footer>
+
+    <audio id="bgMusic" loop>
+        <source src="/assets/songs/epic_song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const music = document.getElementById("bgMusic");
+
+            bgMusic.volume = 0.3;
+
+            document.body.addEventListener("click", () => {
+                bgMusic.play();
+            }, { once: true });
+        });
+    </script>
 </body>
 
 </html>

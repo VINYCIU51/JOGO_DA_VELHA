@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "Runtoe";
+    src: url("/assets/fonts/Runtoe.otf") format("opentype"),
+        url("/assets/fonts/Runtoe.ttf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +17,15 @@ body {
     flex-wrap: nowrap;
     padding: 6rem 1rem;
     row-gap: 12rem;
-    font-family: "Dosis", sans-serif;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-family: "Runtoe";
+    color: rgb(216, 216, 216);
+    font-size: 1.6rem;
     background-image: url(/assets/images/yVSb-game-background.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    transition: all 0.5s ease;
 }
 
 .score-marker {
@@ -34,6 +41,7 @@ body {
     backdrop-filter: blur(3px);
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.623);
+    text-shadow: 0 8px 5px black;
 
     & #player1 {
         display: grid;
@@ -53,6 +61,7 @@ body {
             border-radius: 50%;
             background-image: url(/assets/images/blue_granny_front.png);
             background-size: cover;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.842);
             transition: background-image 0.5s ease-in-out;
         }
 
@@ -68,6 +77,7 @@ body {
             background-color: #ccc;
             border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.842);
 
             & .life-bar {
                 width: 100%;
@@ -104,6 +114,7 @@ body {
             border-radius: 50%;
             background-image: url(/assets/images/yellow_granny_front.png);
             background-size: cover;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.842);
             transition: background-image 0.3s ease-in-out;
         }
 
@@ -121,6 +132,7 @@ body {
             border-radius: 10px;
             overflow: hidden;
             transform: scaleX(-1);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.842);
 
             & .life-bar {
                 width: 100%;
@@ -158,9 +170,9 @@ body {
         align-items: center;
         justify-content: center;
         background-color: transparent;
-        font-size: 5rem;
-        font-weight: bold;
+        font-size: 6rem;
         text-align: center;
+        text-shadow: 0 8px 5px black;
         box-sizing: border-box;
         overflow: hidden;
         border: 6px solid black;
@@ -190,7 +202,6 @@ body {
             opacity: 0.3;
             position: absolute;
             font-size: 5rem;
-            font-weight: bold;
         }
     }
 
@@ -219,8 +230,6 @@ body {
     z-index: 1;
     align-content: center;
     text-align: center;
-    color: aliceblue;
-    font-size: 5rem;
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
@@ -259,8 +268,6 @@ body {
     z-index: 1;
     align-content: center;
     text-align: center;
-    color: aliceblue;
-    font-size: 0rem;
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
@@ -301,7 +308,7 @@ body {
 
     100% {
         font-size: 5rem;
-        width: 35rem;
+        width: 38rem;
         height: 8rem;
         opacity: 1;
     }
@@ -310,7 +317,7 @@ body {
 @keyframes animation-shrink {
     0% {
         font-size: 5rem;
-        width: 35rem;
+        width: 38rem;
         height: 8rem;
         opacity: 1;
     }
@@ -325,6 +332,8 @@ body {
 
 
 #play-again-button {
+    font-family: "Runtoe";
+    color: rgb(216, 216, 216);
     position: fixed;
     top: 60%;
     left: clamp(40%, 55%, 55%);
@@ -337,7 +346,6 @@ body {
     background-color: rgba(21, 168, 2, 0.699);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.753);
     font-size: 1.5rem;
-    color: aliceblue;
     pointer-events: none;
     transform-origin: center;
 
@@ -353,6 +361,8 @@ body {
 }
 
 #back-menu-button {
+    font-family: "Runtoe";
+    color: rgb(216, 216, 216);
     position: fixed;
     top: 60%;
     left: clamp(40%, 45%, 45%);
@@ -365,7 +375,6 @@ body {
     background-color: rgba(21, 168, 2, 0.699);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.753);
     font-size: 1.5rem;
-    color: aliceblue;
     pointer-events: none;
     transform-origin: center;
 
