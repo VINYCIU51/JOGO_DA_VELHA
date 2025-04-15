@@ -7,15 +7,11 @@ Este projeto é uma implementação personalizada e estilizada do clássico **Jo
 
 O foco principal do projeto é o aprimoramento das habilidades de front-end, com ênfase na organização do código, interatividade e uso de recursos multimídia, como sons e animações.
 
----
-
 ## Tecnologias Utilizadas
 
 - **HTML5** – Estrutura do site
 - **CSS3** – Estilização e animações
 - **JavaScript (ES6+)** – Lógica do jogo e manipulação da interface
-
----
 
 ## Estrutura de Pastas
 
@@ -45,9 +41,6 @@ assets/
 │    └── game.html                # Página do jogo
 └──index.html                     # Página inicial
 ```
-
----
-
 ## Funcionalidades
 
 - Interface estilizada com elementos visuais
@@ -56,17 +49,13 @@ assets/
 - Notificações ao fim de cada partida
 - Organização modular do código JavaScript
 
----
-
 ## Como Usar
 
 1. Clone o repositório em sua máquina local:
    ```bash
-   git clone https://github.com/VINYCIU51/calculadora.git
+   git clone https://github.com/VINYCIU51/JOGO_DA_VELHA.git
 2. Abra o arquivo `index.html` em um navegador de sua escolha.
 3. clique em **Play** e comece a jogar. 
-
----
 
 ## Aprendizados
 
@@ -78,8 +67,6 @@ Durante o desenvolvimento deste projeto, foram praticados e reforçados diversos
 - Organização de projetos front-end em pastas
 - Criação de uma interface amigável e responsiva
 
----
-
 ## Melhorias Futuras
 
 - Implementar modo contra IA (inteligência artificial)
@@ -87,3 +74,6 @@ Durante o desenvolvimento deste projeto, foram praticados e reforçados diversos
 - Suporte a dispositivos móveis com design responsivo
 - Salvar histórico de partidas no localStorage
 
+## Licença
+
+Este projeto é de código aberto e está disponível para reutilização e modificação sob a licença [MIT](https://opensource.org/licenses/MIT).
