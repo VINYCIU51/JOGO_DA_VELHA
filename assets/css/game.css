@@ -15,8 +15,8 @@ body {
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 6rem 1rem;
-    row-gap: 12rem;
+    padding: 2rem;
+    row-gap: 7rem;
     font-family: "Runtoe";
     color: rgb(216, 216, 216);
     font-size: 1.6rem;
@@ -29,9 +29,8 @@ body {
 }
 
 .score-marker {
-    height: auto;
     width: min(95%, 60rem);
-    height: 12rem;
+    height: 10rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -156,8 +155,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: min(95vw, 40rem);
-    width: min(95%, 40rem);
+    height: min(85vw, 35rem);
+    width: min(85%, 35rem);
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(3px);
@@ -335,7 +334,7 @@ body {
     font-family: "Runtoe";
     color: rgb(216, 216, 216);
     position: fixed;
-    top: 60%;
+    top: 65%;
     left: clamp(40%, 55%, 55%);
     transform: translate(-50%, -50%);
     height: 3rem;
@@ -364,7 +363,7 @@ body {
     font-family: "Runtoe";
     color: rgb(216, 216, 216);
     position: fixed;
-    top: 60%;
+    top: 65%;
     left: clamp(40%, 45%, 45%);
     transform: translate(-50%, -50%);
     height: 3rem;
