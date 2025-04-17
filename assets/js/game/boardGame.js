@@ -1,3 +1,5 @@
+
+// Tabuleiro interno do jogo
 export class Board {
     constructor() {
         this.board = [
@@ -7,6 +9,7 @@ export class Board {
         ];
     }
 
+    // Limpa todos os espaços do tabuleiro
     clearBoard(spaces) {
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
@@ -19,10 +22,12 @@ export class Board {
         });
     }
 
+    // Verfifica se o espaç é valido para jogar
     validSpace(line, column) {
         return this.board[line][column] === "";
     }
 
+    // Marca o espaço no tabuleiro
     markSpace(line, column, currentPlayer) {
         this.board[line][column] = currentPlayer;
     }

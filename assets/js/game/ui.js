@@ -1,3 +1,5 @@
+
+// Ligações com o DOM para facilitar utilização
 export function referencias() {
     const scoreP1 = document.querySelector("#player1 .points");
     const scoreP2 = document.querySelector("#player2 .points");
@@ -7,6 +9,7 @@ export function referencias() {
     return { scoreP1, scoreP2, lifeP1, lifeP2, spaces };
 }
 
+// Verifica se o jogador clicou em algum espaço para efetuar a jogada
 export function addListeners(spaces, mainGame) {
     spaces.forEach((space, indice) => {
         space.removeEventListener("click", space.clickHandler);

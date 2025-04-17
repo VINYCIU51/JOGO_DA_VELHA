@@ -1,5 +1,8 @@
+
+// Responsável por atualizar as imagens para representar a batalha
 export class Images {
 
+    // Atualiza tanto a imagem de fundo quanto a do avatar, de acordo com quem ganhou o round
     updateImages(currentPlayer, life) {
         let dmgImage;
         let granny;
@@ -54,6 +57,7 @@ export class Images {
         background.style.backgroundImage = `url('${bgImage[bgState]}')`
     }
 
+    // Altera todas as imagens para as padrões, sem danos
     resetImages() {
         const granny1 = document.querySelector("#player1 .avatar");
         const granny2 = document.querySelector("#player2 .avatar");
