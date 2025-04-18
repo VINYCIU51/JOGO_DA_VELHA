@@ -15,8 +15,8 @@ body {
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 2rem;
-    row-gap: 7rem;
+    padding: 1.5rem;
+    row-gap: 5.5rem;
     font-family: "Runtoe";
     color: rgb(216, 216, 216);
     font-size: 1.6rem;
@@ -29,7 +29,7 @@ body {
 }
 
 .score-marker {
-    width: min(95%, 60rem);
+    width: clamp(28rem, 65vw, 65vw);
     height: 10rem;
     display: flex;
     flex-direction: row;
@@ -47,10 +47,10 @@ body {
         grid-template-areas:
             "avatar nome pontos"
             "avatar vida pontos";
-        grid-template-columns: 100px 2fr 1fr;
+        grid-template-columns: clamp(60px, 15vw, 100px) 2fr 1fr;
         grid-template-rows: 50px 50px;
         gap: 1rem;
-        width: 100%;
+        width: clamp(0.2rem, 50%, 50%);
         height: 6rem;
 
         & .avatar {
@@ -100,10 +100,10 @@ body {
         grid-template-areas:
             "pontos nome avatar"
             "pontos vida avatar";
-        grid-template-columns: 1fr 2fr 100px;
+        grid-template-columns: 1fr 2fr clamp(60px, 15vw, 100px);
         grid-template-rows: 50px 50px;
         gap: 1rem;
-        width: 100%;
+        width: clamp(0.2rem, 50%, 50%);
         height: 6rem;
 
         & .avatar {
@@ -155,8 +155,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    height: min(85vw, 35rem);
-    width: min(85%, 35rem);
+    height: clamp(450px, 50vw, 35rem);
+    width: clamp(450px, 50vw, 35rem);
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(3px);
@@ -211,7 +211,7 @@ body {
 
 @keyframes scaleMark {
     0% {
-        transform: scale(4);
+        transform: scale(2);
         opacity: 0;
     }
 
