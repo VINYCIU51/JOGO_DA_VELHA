@@ -15,11 +15,11 @@ body {
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 1.5rem;
+    padding: max(1.5rem, 5.5rem - 5vw);
     row-gap: 5.5rem;
     font-family: "Runtoe";
     color: rgb(216, 216, 216);
-    font-size: 1.6rem;
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
     background-image: url(/assets/images/yVSb-game-background.png);
     background-size: cover;
     background-position: center;
@@ -29,13 +29,13 @@ body {
 }
 
 .score-marker {
-    width: clamp(28rem, 65vw, 65vw);
-    height: 10rem;
+    width: clamp(20rem, 90vw, 60rem);
+    height: clamp(6rem, 22vw, 10rem);
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
-    padding: 1.5rem;
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(3px);
     border-radius: 15px;
@@ -47,16 +47,18 @@ body {
         grid-template-areas:
             "avatar nome pontos"
             "avatar vida pontos";
-        grid-template-columns: clamp(60px, 15vw, 100px) 2fr 1fr;
-        grid-template-rows: 50px 50px;
-        gap: 1rem;
+        grid-template-columns: clamp(3em, 15vw, 6em) 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px 5px;
         width: clamp(0.2rem, 50%, 50%);
-        height: 6rem;
+        height: 100%;
 
         & .avatar {
             grid-area: avatar;
-            height: 110px;
-            width: 110px;
+            align-self: center;
+            margin: auto;
+            width: clamp(5em, 6vw, 6em);
+            height: clamp(5em, 6vw, 6em);
             border-radius: 50%;
             background-image: url(/assets/images/blue_granny_front.png);
             background-size: cover;
@@ -100,16 +102,18 @@ body {
         grid-template-areas:
             "pontos nome avatar"
             "pontos vida avatar";
-        grid-template-columns: 1fr 2fr clamp(60px, 15vw, 100px);
-        grid-template-rows: 50px 50px;
-        gap: 1rem;
+        grid-template-columns: 1fr 2fr clamp(3em, 15vw, 6em);
+        grid-template-rows: 1fr 1fr;
+        gap: 5px 5px;
         width: clamp(0.2rem, 50%, 50%);
-        height: 6rem;
+        height: 100%;
 
         & .avatar {
             grid-area: avatar;
-            height: 110px;
-            width: 110px;
+            align-self: center;
+            margin: auto;
+            width: clamp(5em, 6vw, 6em);
+            height: clamp(5em, 6vw, 6em);
             border-radius: 50%;
             background-image: url(/assets/images/yellow_granny_front.png);
             background-size: cover;
@@ -169,7 +173,7 @@ body {
         align-items: center;
         justify-content: center;
         background-color: transparent;
-        font-size: 6rem;
+        font-size: max(4rem, 5vw);
         text-align: center;
         text-shadow: 0 8px 5px black;
         box-sizing: border-box;
@@ -306,8 +310,8 @@ body {
     }
 
     100% {
-        font-size: 5rem;
-        width: 38rem;
+        font-size: clamp(3rem, 5vw, 5rem);
+        width: clamp(460px, 40vw, 40vw);
         height: 8rem;
         opacity: 1;
     }
@@ -315,8 +319,8 @@ body {
 
 @keyframes animation-shrink {
     0% {
-        font-size: 5rem;
-        width: 38rem;
+        font-size: clamp(3rem, 5vw, 5rem);
+        width: clamp(460px, 40vw, 40vw);
         height: 8rem;
         opacity: 1;
     }
@@ -330,56 +334,34 @@ body {
 }
 
 
-#play-again-button {
-    font-family: "Runtoe";
-    color: rgb(216, 216, 216);
+.button-container {
     position: fixed;
     top: 65%;
-    left: clamp(40%, 55%, 55%);
+    left: 50%;
     transform: translate(-50%, -50%);
-    height: 3rem;
-    width: 9rem;
-    border-radius: 10px;
-    border: none;
+    display: flex;
+    gap: 4rem;
     opacity: 0;
-    background-color: rgba(21, 168, 2, 0.699);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.753);
-    font-size: 1.5rem;
     pointer-events: none;
-    transform-origin: center;
+    z-index: 10;
 
-    &:hover {
-        background-color: rgba(34, 201, 12, 0.815);
-        transform: translate(-50%, -50%) scale(1.08);
-    }
+    & #play-again-button,
+    #back-menu-button {
+        font-family: "Runtoe";
+        color: rgb(216, 216, 216);
+        height: 3rem;
+        width: clamp(9rem, 20vw, 9rem);
+        border-radius: 10px;
+        border: none;
+        background-color: rgba(21, 168, 2, 0.699);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.753);
+        font-size: 1.5rem;
+        transform-origin: center;
 
-    &.show {
-        opacity: 1;
-        pointer-events: all;
-    }
-}
-
-#back-menu-button {
-    font-family: "Runtoe";
-    color: rgb(216, 216, 216);
-    position: fixed;
-    top: 65%;
-    left: clamp(40%, 45%, 45%);
-    transform: translate(-50%, -50%);
-    height: 3rem;
-    width: 9rem;
-    border-radius: 10px;
-    border: none;
-    opacity: 0;
-    background-color: rgba(21, 168, 2, 0.699);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.753);
-    font-size: 1.5rem;
-    pointer-events: none;
-    transform-origin: center;
-
-    &:hover {
-        background-color: rgba(34, 201, 12, 0.815);
-        transform: translate(-50%, -50%) scale(1.08);
+        &:hover {
+            background-color: rgba(34, 201, 12, 0.815);
+            transform: scale(1.08);
+        }
     }
 
     &.show {
