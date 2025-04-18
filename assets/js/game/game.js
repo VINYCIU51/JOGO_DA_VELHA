@@ -1,5 +1,6 @@
 import { referencias, addListeners } from './ui.js';
 
+// Responsável por controlar o jogo
 export class Game {
     constructor(boardInstance, playerInstance) {
         this.boardgame = boardInstance;
@@ -8,25 +9,30 @@ export class Game {
         this.round = 1;
     }
 
+    // Inicia o jgo
     start(mainGame) {
         addListeners(this.spaces, mainGame);
     }
 
+    // Inicia um novo round
     newRound() {
         this.round++;
         this.boardgame.clearBoard(this.spaces);
     }
 
+    // Inicia um novo jogo do zero
     newGame() {
         this.boardgame.clearBoard(this.spaces);
         this.playerInstance.reset();
         this.round = 1;
     }
 
+    // verifica se o round deu empate
     draw() {
         return this.boardgame.board.every(linha => linha.every(coluna => coluna !== "")) && !this.lineWin();
     }
 
+    // Verifica se houve vitória por sequência
     lineWin() {
         const board = this.boardgame.board;
         // Linhas
@@ -43,6 +49,7 @@ export class Game {
         return false;
     }
 
+    // Verifica se houve vitória por zerar a vida do oponente
     lifeWin() {
         return this.playerInstance.life.X <= 0 || this.playerInstance.life.O <= 0;
     }

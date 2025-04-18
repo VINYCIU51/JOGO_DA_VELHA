@@ -2,6 +2,7 @@ import { Images } from "./images.js";
 import { Notifications } from "./notifications.js";
 import { BoardAnimations } from "./board.js";
 
+// Responsável por unir todas as classes em uma para facilitar a chamada de métodos
 export class GameAnimations {
     constructor(game) {
         this._images = new Images();

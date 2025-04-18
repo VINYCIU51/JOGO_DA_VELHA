@@ -1,11 +1,13 @@
 import { Images } from "./images.js";
 
+// Responsável por mostrar as notificações ao longo da partida
 export class Notifications {
     constructor(game) {
         this.game = game;
         this.images = new Images;
     }
 
+    // Exibe o round atual
     showRound(roundNumber) {
         const notification = document.querySelector(".round-notification");
         const roundElement = document.getElementById("round-number");
@@ -23,6 +25,7 @@ export class Notifications {
         }, 1500);
     }
 
+    // Exibe quem venceu a partida
     showWinner(currentPlayer) {
         const notification = document.querySelector('.winner-notification');
         const winnerElement = document.getElementById('winner');
@@ -31,6 +34,7 @@ export class Notifications {
         notification.classList.add('show');
     }
 
+    // Exibe o botão para jogar novamente ou voltar ao menu
     showplayAgain() {
         const buttons = [
             document.getElementById('play-again-button'),

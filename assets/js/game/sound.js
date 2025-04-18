@@ -1,3 +1,5 @@
+
+// Inicia a música do jogo
 export function startMusic() {
     window.document.addEventListener("DOMContentLoaded", () => {
         const music = document.getElementById("bgMusic");

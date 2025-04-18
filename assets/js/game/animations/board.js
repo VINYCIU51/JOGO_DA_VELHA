@@ -1,5 +1,8 @@
+
+// Responsável pelas animações relacionadas ao tabuleiro
 export class BoardAnimations {
 
+    // Função que realiza a animação de mostrar a marcação antes da jogada
     predictPlay(currentPlayer) {
         const spaces = document.querySelectorAll(".space");
         spaces.forEach(space => {
@@ -11,6 +14,7 @@ export class BoardAnimations {
         });
     }
 
+    // Realiza a animação da marcação sendo feita
     animateMark(currentPlayer, space) {
         const mark = document.createElement('div');
         mark.textContent = currentPlayer;
