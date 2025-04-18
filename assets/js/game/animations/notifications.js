@@ -36,19 +36,20 @@ export class Notifications {
 
     // Exibe o botão para jogar novamente ou voltar ao menu
     showplayAgain() {
-        const buttons = [
-            document.getElementById('play-again-button'),
-            document.getElementById("back-menu-button")];
-
+        const buttonContainer = document.querySelector('.button-container');
+        const buttons = buttonContainer.querySelectorAll('button');
         const notification = document.querySelector('.winner-notification');
 
+        // Mostra os botões
+        buttonContainer.classList.add('show');
+
+        // Ao clicar, retira as animações
         buttons.forEach(button => {
-            button.classList.add('show');
             button.addEventListener("click", () => {
                 this.game.newGame();
                 this.images.resetImages();
 
-                buttons.forEach(btn => btn.classList.remove('show'));
+                buttonContainer.classList.remove('show');
                 notification.classList.add("hide");
 
                 notification.addEventListener("animationend", () => {
@@ -56,6 +57,6 @@ export class Notifications {
                     notification.classList.remove("show");
                 }, { once: true });
             }, { once: true });
-        })
+        });
     }
 }
