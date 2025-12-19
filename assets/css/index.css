@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Runtoe";
-    src: url("/assets/fonts/Runtoe.otf") format("opentype"),
-        url("/assets/fonts/Runtoe.ttf") format("truetype");
+    src: url("../fonts/Runtoe.otf") format("opentype"),
+        url("../fonts/Runtoe.ttf") format("truetype");
 }
 
 * {
@@ -16,7 +16,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     font-family: "Runtoe";
-    background-image: url(/assets/images/fire-house.png);
+    background-image: url(../images/fire-house.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -29,7 +29,7 @@ body {
         left: 0;
         width: 50vw;
         height: 90vh;
-        background-image: url(/assets/images/blue_granny.png);
+        background-image: url(../images/blue_granny.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: left bottom;
@@ -44,7 +44,7 @@ body {
         right: 0;
         width: 50vw;
         height: 90vh;
-        background-image: url(/assets/images/yellow_granny.png);
+        background-image: url(../images/yellow_granny.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right bottom;
@@ -106,7 +106,7 @@ header {
         width: 200px;
         top: 20%;
         left: 70%;
-        background-image: url(/assets/images/coming-soon.png);
+        background-image: url(../images/coming-soon.png);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
