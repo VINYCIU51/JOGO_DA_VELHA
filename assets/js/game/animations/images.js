@@ -13,32 +13,32 @@ export class Images {
             granny = document.querySelector("#player1 .avatar");
 
             dmgImage = [
-                "../assets/images/blue_granny_front.png",
-                "../assets/images/blue-dmg1.png",
-                "../assets/images/blue-dmg2.png",
-                "../assets/images/blue-dmg3.png",
-                "../assets/images/blue-dmg4.png",
+                "../assets/images/blue_granny_front.webp",
+                "../assets/images/blue-dmg1.webp",
+                "../assets/images/blue-dmg2.webp",
+                "../assets/images/blue-dmg3.webp",
+                "../assets/images/blue-dmg4.webp",
             ];
 
             bgImage = [
-                "../assets/images/y-punch-b.png",
-                "../assets/images/y-kick-b.png",
-                "../assets/images/y-cut-b.png",
+                "../assets/images/y-punch-b.webp",
+                "../assets/images/y-kick-b.webp",
+                "../assets/images/y-cut-b.webp",
             ];
         } else if (currentPlayer === "O") {
             granny = document.querySelector("#player2 .avatar");
             dmgImage = [
-                "../assets/images/yellow_granny_front.png",
-                "../assets/images/yellow-dmg1.png",
-                "../assets/images/yellow-dmg2.png",
-                "../assets/images/yellow-dmg3.png",
-                "../assets/images/yellow-dmg4.png",
+                "../assets/images/yellow_granny_front.webp",
+                "../assets/images/yellow-dmg1.webp",
+                "../assets/images/yellow-dmg2.webp",
+                "../assets/images/yellow-dmg3.webp",
+                "../assets/images/yellow-dmg4.webp",
             ];
 
             bgImage = [
-                "../assets/images/b-punch-y.png",
-                "../assets/images/b-kick-y.png",
-                "../assets/images/b-power-y.png",
+                "../assets/images/b-punch-y.webp",
+                "../assets/images/b-kick-y.webp",
+                "../assets/images/b-power-y.webp",
             ];
         }
 
@@ -63,8 +63,8 @@ export class Images {
         const granny2 = document.querySelector("#player2 .avatar");
         const background = document.querySelector("body");
 
-        granny1.style.backgroundImage = "url(../assets/images/blue_granny_front.png)";
-        granny2.style.backgroundImage = "url(../assets/images/yellow_granny_front.png)";
-        background.style.backgroundImage = "url(../assets/images/yVSb-game-background.png)";
+        granny1.style.backgroundImage = "url(../assets/images/blue_granny_front.webp)";
+        granny2.style.backgroundImage = "url(../assets/images/yellow_granny_front.webp)";
+        background.style.backgroundImage = "url(../assets/images/yVSb-game-background.webp)";
     }
 }
