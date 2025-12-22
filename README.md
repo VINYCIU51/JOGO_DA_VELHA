@@ -54,7 +54,7 @@ assets/
 
 1. Clone o repositório em sua máquina local:
    ```bash
-   git clone https://github.com/VINYCIU51/JOGO_DA_VELHA.git
+   git clone https://github.com/VINYCIU51/Granny_battle.git
 2. Abra o arquivo `index.html` em um navegador de sua escolha.
 3. clique em **Play** e comece a jogar. 
 
