@@ -50,14 +50,6 @@ assets/
 - Notificações ao fim de cada partida
 - Organização modular do código JavaScript
 
-## Como Usar
-
-1. Clone o repositório em sua máquina local:
-   ```bash
-   git clone https://github.com/VINYCIU51/Granny_battle.git
-2. Abra o arquivo `index.html` em um navegador de sua escolha.
-3. clique em **Play** e comece a jogar. 
-
 ## Aprendizados
 
 Durante o desenvolvimento deste projeto, foram praticados e reforçados diversos conceitos importantes, como:
