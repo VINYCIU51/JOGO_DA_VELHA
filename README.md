@@ -2,7 +2,7 @@
 # Jogo da Velha Estilizado
 
 Este projeto é uma implementação personalizada e estilizada do clássico **Jogo da Velha (Tic-Tac-Toe)**, desenvolvido com o objetivo de praticar os conhecimentos em **HTML**, **CSS** e **JavaScript**.
-#### Link: https://vinyciu51.github.io/JOGO_DA_VELHA/
+#### Link: https://vinyciu51.github.io/Granny_battle/
 
 ## Objetivo
 
